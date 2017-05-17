@@ -7,13 +7,13 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
+	<header id="inicio">
 		<p><img src="img/students.png" alt=""></p>
 		<h1>G.A.D. Gerenciador de Atividades Dinâmico</h1>
 	</header><!-- /header -->
 
 	<section>
-		<form>
+		<form id="logcad">
 			<div id="nome">
 			<label for="iuser"><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
 			<input type="text" name="nuser" id="iuser" value="seu nome...">

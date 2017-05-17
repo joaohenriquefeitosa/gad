@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<header>
+	<header id="inicio">
 		<p><img src="img/students.png" alt=""></p>
 		<h1>G.A.D. Gerenciador de Atividades Dinâmico</h1>
 	</header><!-- /header -->
