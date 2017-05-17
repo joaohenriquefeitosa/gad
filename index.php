@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>G.A.D. - Login</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,18 +14,18 @@
 
 	<section>
 		<form>
-			<div id="email">
-			<label for=""><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
-			<input type="" name="">
+			<div id="user">
+			<label for="iuser"><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
+			<input type="text" name="nuser" id="iuser" value="email ou grr...">
 			</div>
 
 			<div id="pass">
-			<label for=""><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>
-			<input type="" name="">
+			<label for="ipass"><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>
+			<input type="password" name="npass" id="ipass" value="senha...">
 			</div>
 
 			<div id="enviar"><p>Login</p> <img src="img/login.png" alt=""><div id="clear"></div></div>
-
+			<div id="troca">Não é cadastrado? <a href="cadastro.php"><small>Clique aqui!</small></a></div>
 		</form>
 	</section>
 	
