@@ -15,17 +15,17 @@
 	<section>
 		<form id="logcad">
 			<div id="nome">
-			<label for="iuser"><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
+			<label for="iuser"><span><img src="img/user.png" alt=""></span></label>
 			<input type="text" name="nuser" id="iuser" value="seu nome...">
 			</div>
 
 			<div id="email">
-			<label for="iuser"><span><img src="img/email.png" alt="" width="20px" height="20px"></span></label>
+			<label for="iuser"><span><img src="img/email.png" alt=""></span></label>
 			<input type="text" name="nuser" id="iuser" value="email...">
 			</div>
 
 			<div id="curso">
-			<label for="icurso"><span><img src="img/course.png" alt="" width="20px" height="20px"></span></label>
+			<label for="icurso"><span><img src="img/course.png" alt=""></span></label>
 			<select name="ncurso" id="icurso">
 				<option value="" selected>SEU CURSO</option>
 				<option value="">TADS</option>

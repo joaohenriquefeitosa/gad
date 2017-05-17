@@ -7,22 +7,57 @@ body{background-color: #303641; font-family: Arial, sans-serif; color: #9b9d9e;}
 #clear{clear: both;}
 
 
-
+/*==========================================================================================*/
 /*====================HEADER DAS PÁGINAS DE LOGIN E CADASTRO ==============================*/ 
+/*==========================================================================================*/
 header#inicio{height: 100%; background-color: #373e4a;}
 header#inicio img{height: 8%; width: 8%; padding-bottom: 10px; margin-top: 40px;}
 header#inicio p {text-align:center;}
 header#inicio h1{text-align: center; font-size: 1.2em; margin-bottom: 40px;}
 
-/*====================FORM DAS PÁGINAS DE LOGIN E CADASTRO ================================*/ 
+
+
+/*==========================================================================================*/
+/*====================FORM DAS PÁGINAS DE LOGIN E CADASTRO =================================*/ 
+/*==========================================================================================*/
 form#logcad{margin: 0 auto; width: 250px; margin-top: 40px;}
 form#logcad div#user, div#pass{width: 100%;}
 form#logcad span img{padding-top: 5px; padding-right: 5px; position: relative;}
 form#logcad input, form select {position: relative; margin-bottom: 15px; padding: 0 5px; background-color:#373e4a; border: none; height: 35px; width: 80%; color: #9b9d9e; font-size: 1em;}
 form#logcad select {width: 84%;}
-form#logcad div#enviar{cursor: pointer; border: 2px solid #373e4a; border-radius: 4px; padding: 10px 5px; box-shadow: 1px 1px 1px rgba(0,0,0,0.4); margin-bottom: 20px; font-weight: bold;}
+form#logcad div#enviar{cursor: pointer; border: 2px solid #373e4a; border-radius: 4px; padding: 10px 5px; box-shadow: 1px 1px 1px rgba(0,0,0,0.4); margin-bottom: 20px; font-weight: bold; width: 90%;}
 form#logcad div#enviar p{float: left; font-size: 0.75em; }
 form#logcad div#enviar img{width: 15px; height: 15px; position: relative; float: right;}
 form#logcad div#troca {text-align: center;}
 form#logcad div#troca a {color: #fff; text-decoration: none;}
 div#clear{clear: both;}
+
+
+
+/*==========================================================================================*/
+/*=====================SECTION==============================================================*/
+/*==========================================================================================*/
+section.interface{width: 80%; float: right; background: #fff;}
+section.interface h1 {text-align: center; padding: 10px 0;}
+section.interface article#detalhes{width: 100%;  padding: 4px;}
+section.interface article#detalhes div{width: 24%; border-radius: 6px; display: inline-block; height: 100px;}
+section.interface article#detalhes div#dt01{background-color: #f56954;}
+section.interface article#detalhes div#dt02{background-color: #00a65a;}
+section.interface article#detalhes div#dt03{background-color: #00c0ef;}
+section.interface article#detalhes div#dt04{background-color: #007367;}
+
+/*==========================================================================================*/
+/*=====================ASIDE================================================================*/
+/*==========================================================================================*/
+aside.interface{width: 20%; float:left;}
+aside.interface header {border-bottom: 1px solid #929292;}
+aside.interface img{padding: 10px;  padding: 15px 20px; }
+
+/*MENU*/
+ul{}
+ul li#option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none;}
+li ul li{list-style: none; display: none;}
+
+/*==========================================================================================*/
+/*======================FOOTER==============================================================*/
+/*==========================================================================================*/

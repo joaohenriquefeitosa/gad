@@ -13,14 +13,14 @@
 	</header><!-- /header -->
 
 	<section>
-		<form>
+		<form id="logcad">
 			<div id="user">
-			<label for="iuser"><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
+			<label for="iuser"><span><img src="img/user.png" alt=""></span></label>
 			<input type="text" name="nuser" id="iuser" value="email ou grr...">
 			</div>
 
 			<div id="pass">
-			<label for="ipass"><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>
+			<label for="ipass"><span><img src="img/padlock.png" alt=""></span></label>
 			<input type="password" name="npass" id="ipass" value="senha...">
 			</div>
 
