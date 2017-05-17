@@ -15,13 +15,15 @@
 	<section>
 		<form>
 			<div id="email">
-			<label for=""><span>d</span></label>
+			<label for=""><span><img src="img/user.png" alt="" width="20px" height="20px"></span></label>
 			<input type="" name="">
 			</div>
+
 			<div id="pass">
-			<label for=""><span>d</span></label>
+			<label for=""><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>
 			<input type="" name="">
 			</div>
+
 			<div id="enviar"><p>Login</p> <img src="img/login.png" alt=""><div id="clear"></div></div>
 
 		</form>

@@ -12,10 +12,11 @@ header p {text-align:center;}
 header h1{text-align: center; color: #9b9d9e; font-size: 1.2em; margin-bottom: 40px;}
 
 
-form{margin: 0 auto; width: 15%; margin-top: 40px;}
+form{margin: 0 auto; width: 250px; margin-top: 40px;}
 form div#email, div#pass{width: 100%;}
-form input {position: relative; padding: 8px 0; margin-bottom: 15px; background-color:#373e4a; border: none;}
-form div#enviar{cursor: pointer; border: 2px solid #373e4a; border-radius: 4px; padding: 10px 5px;}
+form span img{padding-top: 5px; padding-right: 5px; position: relative;}
+form input {position: relative; margin-bottom: 15px; background-color:#373e4a; border: none; height: 35px; width: 85%;}
+form div#enviar{cursor: pointer; border: 2px solid #373e4a; border-radius: 4px; padding: 10px 5px; box-shadow: 1px 1px 1px rgba(0,0,0,0.4);}
 form div#enviar p{float: left; font-size: 0.75em; }
 form div#enviar img{width: 15px; height: 15px; position: relative; float: right;}
 div#clear{clear: both;}
