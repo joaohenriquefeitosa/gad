@@ -39,12 +39,17 @@ div#clear{clear: both;}
 /*==========================================================================================*/
 section.interface{width: 80%; float: right; background: #fff;}
 section.interface h1 {text-align: center; padding: 10px 0;}
-section.interface article#detalhes{width: 100%;  padding: 4px;}
-section.interface article#detalhes div{width: 24%; border-radius: 6px; display: inline-block; height: 100px;}
+section.interface article#detalhes{width: 100%;  padding: 4px; margin-bottom: 20px;}
+section.interface article#detalhes div.det{width: 24%; border-radius: 6px; display: inline-block; height: 100px; color: #fff;}
+section.interface article#detalhes div.det div {padding: 10px; text-align: right;}
+section.interface article#detalhes div.det div strong{font-size: 30px;}
 section.interface article#detalhes div#dt01{background-color: #f56954;}
 section.interface article#detalhes div#dt02{background-color: #00a65a;}
 section.interface article#detalhes div#dt03{background-color: #00c0ef;}
 section.interface article#detalhes div#dt04{background-color: #007367;}
+
+section.interface article#corpo div#identificacao {border-bottom: 1px solid #929292; margin-bottom: 20px; padding-bottom: 15px;}
+section.interface article#corpo div#identificacao p {color: #000; padding: 0 20px; font-size: 14px; text-align: right;}
 
 /*==========================================================================================*/
 /*=====================ASIDE================================================================*/
@@ -54,7 +59,6 @@ aside.interface header {border-bottom: 1px solid #929292;}
 aside.interface img{padding: 10px;  padding: 15px 20px; }
 
 /*MENU*/
-ul{}
 ul li.option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none;}
 li ul li{list-style: none; display: none;}
 

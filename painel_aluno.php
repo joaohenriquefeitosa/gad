@@ -10,18 +10,25 @@
 <section class="interface">
 	<h1>G.A.D - Gerenciador de Atividades Dinâmico</h1>
 	<article id="detalhes">
-		<div id="dt01">
-			
+		<div class="det" id="dt01">
+			<div><strong>6</strong><br>
+			<small>Minhas Disciplinas</small></div>
 		</div>
-		<div id="dt02">
-			
+		<div class="det" id="dt02">
+			<div><strong>22</strong><br>
+			<small>Exercícios Feitos</small></div>
 		</div>
-		<div id="dt03">
-			
+		<div class="det" id="dt03">
+			<div><strong>50</strong><br>
+			<small>Exercícios Pendentes</small></div>
 		</div>
-		<div id="dt04">
-			
+		<div class="det" id="dt04">
+			<div><strong>87%</strong><br>
+			<small>Média de Acerto</small></div>
 		</div>
+	</article>
+	<article id="corpo">
+		<p>Seja bem vindo, Aluno João Henrique.</p>
 	</article>
 </section>
 <aside class="interface">
@@ -34,60 +41,9 @@
 			<li class="option">Meus Dados</li>
 			<li class="option">Disciplinas
 				<ul>
-					<li>Matemática
-						<ul>
-							<li>Conjuntos
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>Geometria
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>Portugues
-						<ul>
-							<li>Acentuação
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>Ortografia
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>História
-						<ul>
-							<li>1ª Guerra Mundial
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>2ª Guerra Mundial
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
+					<li>Matemática</li>
+					<li>Portugues</li>
+					<li>História</li>
 				</ul>
 			</li>
 			<li class="option">Sair</li>
