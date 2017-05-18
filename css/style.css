@@ -55,7 +55,7 @@ aside.interface img{padding: 10px;  padding: 15px 20px; }
 
 /*MENU*/
 ul{}
-ul li#option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none;}
+ul li.option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none;}
 li ul li{list-style: none; display: none;}
 
 /*==========================================================================================*/

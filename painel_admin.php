@@ -30,67 +30,12 @@
 	</header><!-- /header -->
 	<div id="menu">
 		<ul>
-			<li id="option">Painel de Controle</li>
-			<li id="option">Meus Dados</li>
-			<li id="option">Disciplinas
-				<ul>
-					<li>Matemática
-						<ul>
-							<li>Conjuntos
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>Geometria
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>Portugues
-						<ul>
-							<li>Acentuação
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>Ortografia
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>História
-						<ul>
-							<li>1ª Guerra Mundial
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-							<li>2ª Guerra Mundial
-								<ul>
-									<li>Lista 01</li>
-									<li>Lista 02</li>
-									<li>Lista 03</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li id="option">Sair</li>
+			<li class="option">Painel de Controle</li>
+			<li class="option">Meus Dados</li>
+			<li class="option">Gerenciar Cursos</li>
+			<li class="option">Gerenciar Disciplinas</li>
+			<li class="option">Gerenciar Exercícios</li>
+			<li class="option">Sair</li>
 		</ul>		
 	</div>
 </aside>	
