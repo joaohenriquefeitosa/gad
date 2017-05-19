@@ -51,6 +51,9 @@ section.interface article#detalhes div#dt04{background-color: #007367;}
 section.interface article#corpo div#identificacao {border-bottom: 1px solid #929292; margin-bottom: 20px; padding-bottom: 15px;}
 section.interface article#corpo div#identificacao p {color: #000; padding: 0 20px; font-size: 14px; text-align: right;}
 
+section.interface article#corpo div#meus_dados h3 {color: #000; padding-bottom: 5px; border-bottom: 1px solid #000; margin-bottom: 10px;}
+section.interface article#corpo div#meus_dados table {width: 100%; text-align:left; font-weight: normal; color: #000;}
+
 /*==========================================================================================*/
 /*=====================ASIDE================================================================*/
 /*==========================================================================================*/

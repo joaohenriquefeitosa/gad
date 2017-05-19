@@ -31,6 +31,32 @@
 		<div id="identificacao">
 			<p>Seja bem vindo, Adm. João Henrique.</p>
 			<p><small>Não é você? <a href="#" title="">Clique aqui!</a></small></p>
+		</div>
+
+		<div id="meus_dados">
+			<h3>Meus Dados</h3>
+			<table>
+				<tr>
+					<th><strong>Nome: </strong></th>
+					<th>João Henrique Feitosa</th>
+					<th><a href="#" title="">Alterar</a></th>
+				</tr>
+				<tr>
+					<th><strong>Email: </strong></th>
+					<th>joaohenriquefsf@gmail.com</th>
+					<th><a href="#" title="">Alterar</a></th>
+				</tr>
+				<tr>
+					<th><strong>Curso: </strong></th>
+					<th>TADS</th>
+					<th><a href="#" title="">Alterar</a></th>
+				</tr>
+				<tr>
+					<th><strong>Senha: </strong></th>
+					<th>****</th>
+					<th><a href="#" title="">Alterar</a></th>
+				</tr>
+			</table>
 		</div>		
 	</article>
 </section>
