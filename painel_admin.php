@@ -9,31 +9,31 @@
 <body>
 <section class="interface">
 	<h1>G.A.D - Gerenciador de Atividades Dinâmico</h1>
-	<article id="detalhes">
-		<div class="det" id="dt01">
+	<article class="detalhes">
+		<div class="det dt01">
 			<div><strong>6</strong><br>
 			<small>Total de Cursos</small></div>
 		</div>
-		<div class="det" id="dt02">
+		<div class="det dt02">
 			<div><strong>22</strong><br>
 			<small>Total de Disciplinas</small></div>
 		</div>
-		<div class="det" id="dt03">
+		<div class="det dt03">
 			<div><strong>50</strong><br>
 			<small>Total de Alunos</small></div>
 		</div>
-		<div class="det" id="dt04">
+		<div class="det dt04">
 			<div><strong>8</strong><br>
 			<small>Total de Professores</small></div>
-		</div>
+		</div><!-- FIM ARTICLE DETALHES -->
 	</article>
 	<article id="corpo">
 		<div id="identificacao">
 			<p>Seja bem vindo, Adm. João Henrique.</p>
 			<p><small>Não é você? <a href="#" title="">Clique aqui!</a></small></p>
-		</div>
+		</div><!-- FIM DIV IDENTIFICAÇÃO-->
 
-		<div id="meus_dados">
+		<div class="bloco" id="meus_dados">
 			<h3>Meus Dados</h3>
 			<table>
 				<tr>
@@ -57,13 +57,85 @@
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
 			</table>
-		</div>		
+		</div><!-- FIM DIV MEUS_DADOS-->		
+		<div class="bloco" id="cursos">
+			<h3>Cursos</h3>
+			<h4>TADS</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+				<article class="detalhes">
+					<div class="det dt02">
+						<div><strong>22</strong><br>
+						<small>Disciplinas</small></div>
+					</div>
+					<div class="det dt03">
+						<div><strong>50</strong><br>
+						<small>Alunos</small></div>
+					</div>
+					<div class="det dt04">
+						<div><strong>8</strong><br>
+						<small>Professores</small></div>
+					</div><!-- FIM ARTICLE DETALHES -->
+					<div id="menu_curso">
+						<ul>
+							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+							<li><a href="#" title="">Excluir Curso</a></li>
+						</ul>
+					</div>
+				</article>
+
+				<h4>TADS</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+				<article class="detalhes">
+					<div class="det dt02">
+						<div><strong>22</strong><br>
+						<small>Disciplinas</small></div>
+					</div>
+					<div class="det dt03">
+						<div><strong>50</strong><br>
+						<small>Alunos</small></div>
+					</div>
+					<div class="det dt04">
+						<div><strong>8</strong><br>
+						<small>Professores</small></div>
+					</div><!-- FIM ARTICLE DETALHES -->
+					<div id="menu_curso">
+						<ul>
+							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+							<li><a href="#" title="">Excluir Curso</a></li>
+						</ul>
+					</div>
+				</article>
+
+				<h4>TADS</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+				<article class="detalhes">
+					<div class="det dt02">
+						<div><strong>22</strong><br>
+						<small>Disciplinas</small></div>
+					</div>
+					<div class="det dt03">
+						<div><strong>50</strong><br>
+						<small>Alunos</small></div>
+					</div>
+					<div class="det dt04">
+						<div><strong>8</strong><br>
+						<small>Professores</small></div>
+					</div><!-- FIM ARTICLE DETALHES -->
+					<div id="menu_curso">
+						<ul>
+							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+							<li><a href="#" title="">Excluir Curso</a></li>
+						</ul>
+					</div>
+				</article>
+
+		</div><!-- FIM DIV CURSOS-->
 	</article>
 </section>
 <aside class="interface">
 	<header>
 		<img src="img/students.png" alt="">	
-	</header><!-- /header -->
+	</header><!-- Fim header -->
 	<div id="menu">
 		<ul>
 			<li class="option">Painel de Controle</li>
