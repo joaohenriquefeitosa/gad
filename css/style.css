@@ -7,6 +7,8 @@ body{background-color: #303641; font-family: Arial, sans-serif; color: #9b9d9e;}
 #clear{clear: both;}
 
 
+
+
 /*==========================================================================================*/
 /*====================HEADER DAS PÁGINAS DE LOGIN E CADASTRO ==============================*/ 
 /*==========================================================================================*/
@@ -67,6 +69,15 @@ section.interface article#corpo div#cursos ul li{font-size: 14px; padding: 4px 0
 section.interface article#corpo div#cursos article.detalhes {padding-left: 30px;}
 section.interface article#corpo div#cursos article.detalhes div.det{width: 12%; height: 60px;}
 section.interface article#corpo div#cursos article.detalhes div.det div strong{font-size: 20px;}
+
+section.interface article#corpo div#disciplinas div {padding-bottom: 30px;}
+section.interface article#corpo div#disciplinas div h4 {padding-left: 20px;}
+section.interface article#corpo div#disciplinas div p {padding-left: 30px; padding-top: 4px;}
+section.interface article#corpo div#disciplinas div p a {font-size: 14px;}
+
+section.interface article#corpo div.gerenciaveis div p.gray{background-color:#eee; width: 90%; margin: 8px auto; padding: 5px 0;}
+section.interface article#corpo div.gerenciaveis div p.ngray{background-color:#fff; width: 90%; margin: 8px auto;}
+section.interface article#corpo div.gerenciaveis div p em {padding: 20px;}
 
 
 /*==========================================================================================*/

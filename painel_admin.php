@@ -130,6 +130,103 @@
 				</article>
 
 		</div><!-- FIM DIV CURSOS-->
+		<div class="bloco" id="disciplinas">
+			<h3>Disciplinas</h3>
+			<div>
+				<h4>Matemática</h4>
+				<p>Professor Fulano</p>
+				<p>Alunos: 66</p>
+				<p>
+				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Excluir</a>
+				</p>			
+			</div>
+			<div>
+				<h4>Matemática</h4>
+				<p>Professor Fulano</p>
+				<p>Alunos: 66</p>
+				<p>
+				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Excluir</a>
+				</p>			
+			</div>
+			<div>
+				<h4>Matemática</h4>
+				<p>Professor Fulano</p>
+				<p>Alunos: 66</p>
+				<p>
+				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Excluir</a>
+				</p>			
+			</div>
+			<div>
+				<h4>Matemática</h4>
+				<p>Professor Fulano</p>
+				<p>Alunos: 66</p>
+				<p>
+				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Excluir</a>
+				</p>			
+			</div>
+		</div><!-- FIM DIV DISCIPLINAS-->
+
+		<div class="bloco gerenciaveis" id="professores">
+			<h3>Professores</h3>
+				<div>
+					<p class="gray">
+						<strong>João Henrique Feitosa</strong>  
+						<em>Matemática </em>
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="ngray">
+						<strong>João Henrique Feitosa</strong>  
+						<em>Matemática </em>
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="gray">
+						<strong>João Henrique Feitosa</strong>  
+						<em>Matemática </em>
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="ngray">
+						<strong>João Henrique Feitosa</strong>  
+						<em>Matemática </em>
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+				</div>				
+			</div>
+		</div><!-- FIM DIV PROFESSORES-->
+
+		<div class="bloco gerenciaveis" id="alunos">
+			<h3>Alunos</h3>
+				<div>
+					<p class="gray">
+						<strong>João Henrique Feitosa</strong>  
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="ngray">
+						<strong>João Henrique Feitosa</strong>  
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="gray">
+						<strong>João Henrique Feitosa</strong>  
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+					<p class="ngray">
+						<strong>João Henrique Feitosa</strong>  
+						<a href="#" title="">Editar</a>
+						<a href="#" title="">Excluir</a>
+					</p>
+				</div>				
+			</div>
+		</div><!-- FIM DIV PROFESSORES-->
 	</article>
 </section>
 <aside class="interface">
@@ -140,9 +237,21 @@
 		<ul>
 			<li class="option">Painel de Controle</li>
 			<li class="option">Meus Dados</li>
-			<li class="option">Gerenciar Cursos</li>
-			<li class="option">Gerenciar Disciplinas</li>
-			<li class="option">Gerenciar Professores</li>
+			<li class="option">Gerenciar Cursos
+				<ul>
+					<li>Adicionar Curso</li>
+				</ul>
+			</li>
+			<li class="option">Gerenciar Disciplinas
+				<ul>
+					<li>Adicionar Disciplina</li>
+				</ul>
+			</li>
+			<li class="option">Gerenciar Professores
+				<ul>
+					<li>Adicionar Professor</li>
+				</ul>
+			</li>
 			<li class="option">Gerenciar Alunos</li>
 			<li class="option">Sair</li>
 		</ul>		
