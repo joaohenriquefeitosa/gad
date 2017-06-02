@@ -60,10 +60,12 @@ section.interface article#corpo div#identificacao {margin-bottom: 20px; padding-
 section.interface article#corpo div#identificacao p {color: #000; padding: 0 20px; font-size: 14px; text-align: right;}
 
 /*BLOCOS*/
+section.interface article#corpo div#meus_dados {display: none;}
 section.interface article#corpo div.bloco {margin-bottom: 10px; color: #000;}
 section.interface article#corpo div.bloco h3 {padding-bottom: 5px; border-bottom: 1px solid #000; margin-bottom: 10px; padding: 10px;}
 section.interface article#corpo div#meus_dados table {margin: 0 auto; width: 90%; text-align:left; font-weight: normal; padding: 10px;}
 
+section.interface article#corpo div#cursos {display: none;}
 section.interface article#corpo div#cursos h4 {padding: 10px;}
 section.interface article#corpo div#cursos p {width: 40%; padding-left: 30px; padding-bottom: 10px;}
 section.interface article#corpo div#cursos div#menu_curso {display: inline-block; padding-left: 20px;}
@@ -73,11 +75,15 @@ section.interface article#corpo div#cursos article.detalhes {padding-left: 30px;
 section.interface article#corpo div#cursos article.detalhes div.det{width: 12%; height: 60px;}
 section.interface article#corpo div#cursos article.detalhes div.det div strong{font-size: 20px;}
 
+section.interface article#corpo div#disciplinas {display: none;}
 section.interface article#corpo div#disciplinas div {padding-bottom: 30px;}
 section.interface article#corpo div#disciplinas div h4 {padding-left: 20px;}
 section.interface article#corpo div#disciplinas div p {padding-left: 30px; padding-top: 4px;}
 section.interface article#corpo div#disciplinas div p a {font-size: 14px;}
 
+section.interface article#corpo div#professores {display: none;}
+
+section.interface article#corpo div#alunos {display: none;}
 section.interface article#corpo div.gerenciaveis div p em {padding: 20px;}
 
 
@@ -89,7 +95,7 @@ aside.interface header {border-bottom: 1px solid #929292;}
 aside.interface img{padding: 10px;  padding: 15px 20px; }
 
 /*MENU*/
-aside.interface ul li.option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none;}
+aside.interface ul li.option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none; cursor: pointer;}
 aside.interface li ul li{list-style: none; display: none;}
 
 /*==========================================================================================*/

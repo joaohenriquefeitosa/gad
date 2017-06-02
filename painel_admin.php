@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Seja Bem Vindo ao Painel de Controle</title>
+	<script type="text/javascript" src="js/menu.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -57,6 +58,7 @@
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
 			</table>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div><!-- FIM DIV MEUS_DADOS-->		
 		<div class="bloco" id="cursos">
 			<h3>Cursos</h3>
@@ -265,23 +267,23 @@
 	<div id="menu">
 		<ul>
 			<li class="option">Painel de Controle</li>
-			<li class="option">Meus Dados</li>
-			<li class="option">Gerenciar Cursos
+			<li class="option" id="click_meus_dados">Meus Dados</li>
+			<li class="option" id="click_cursos">Gerenciar Cursos
 				<ul>
-					<li>Adicionar Curso</li>
+					<li id="click_sub_cursos">Adicionar Curso</li>
 				</ul>
 			</li>
-			<li class="option">Gerenciar Disciplinas
+			<li class="option" id="click_disciplinas">Gerenciar Disciplinas
 				<ul>
-					<li>Adicionar Disciplina</li>
+					<li id="click_sub_disciplinas">Adicionar Disciplina</li>
 				</ul>
 			</li>
-			<li class="option">Gerenciar Professores
+			<li class="option" id="click_professores">Gerenciar Professores
 				<ul>
-					<li>Adicionar Professor</li>
+					<li id="click_sub_professores">Adicionar Professor</li>
 				</ul>
 			</li>
-			<li class="option">Gerenciar Alunos</li>
+			<li class="option" id="click_alunos">Gerenciar Alunos</li>
 			<li class="option">Sair</li>
 		</ul>		
 	</div>
