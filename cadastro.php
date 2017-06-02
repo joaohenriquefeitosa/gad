@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>G.A.D. - Cadastro</title>
+	<script type="text/javascript" src="js/forms.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,8 +21,8 @@
 			</div>
 
 			<div id="email">
-			<label for="iuser"><span><img src="img/email.png" alt=""></span></label>
-			<input type="text" name="nuser" id="iuser" value="email...">
+			<label for="iemail"><span><img src="img/email.png" alt=""></span></label>
+			<input type="text" name="nuser" id="iemail" value="email...">
 			</div>
 
 			<div id="curso">
@@ -36,7 +37,7 @@
 
 			<div id="pass">
 			<label for="ipass"><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>
-			<input type="password" name="npass" id="ipass" value="senha...">
+			<input type="text" name="npass" id="ipass" value="senha...">
 			</div>
 
 			<div id="enviar"><p>Cadastre-se</p> <img src="img/login.png" alt=""><div id="clear"></div></div>

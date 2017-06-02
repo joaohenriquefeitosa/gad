@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>G.A.D. - Login</title>
+	<script type="text/javascript" src="js/forms.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +22,7 @@
 
 			<div id="pass">
 			<label for="ipass"><span><img src="img/padlock.png" alt=""></span></label>
-			<input type="password" name="npass" id="ipass" value="senha...">
+			<input type="text" name="npass" id="ipass" value="senha...">
 			</div>
 
 			<div id="enviar"><p>Login</p> <img src="img/login.png" alt=""><div id="clear"></div></div>

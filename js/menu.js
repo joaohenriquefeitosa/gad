@@ -4,6 +4,9 @@ function meusDados(){
 	document.getElementById("disciplinas").style.display = 'none';
 	document.getElementById("professores").style.display = 'none';
 	document.getElementById("alunos").style.display = 'none';
+	document.getElementById("click_sub_cursos").style.display = 'none';
+	document.getElementById("click_sub_professores").style.display = 'none';
+	document.getElementById("click_sub_disciplinas").style.display = 'none';
 }
 
 function cursos(){
@@ -45,6 +48,9 @@ function alunos(){
 	document.getElementById("disciplinas").style.display = 'none';
 	document.getElementById("professores").style.display = 'none';
 	document.getElementById("alunos").style.display = 'block';
+	document.getElementById("click_sub_cursos").style.display = 'none';
+	document.getElementById("click_sub_professores").style.display = 'none';
+	document.getElementById("click_sub_disciplinas").style.display = 'none';
 }
 
 
