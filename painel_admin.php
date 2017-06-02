@@ -36,7 +36,7 @@
 		<div class="bloco" id="meus_dados">
 			<h3>Meus Dados</h3>
 			<table>
-				<tr>
+				<tr class="gray">
 					<th><strong>Nome: </strong></th>
 					<th>João Henrique Feitosa</th>
 					<th><a href="#" title="">Alterar</a></th>
@@ -46,7 +46,7 @@
 					<th>joaohenriquefsf@gmail.com</th>
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
-				<tr>
+				<tr class="gray">
 					<th><strong>Curso: </strong></th>
 					<th>TADS</th>
 					<th><a href="#" title="">Alterar</a></th>
@@ -60,111 +60,140 @@
 		</div><!-- FIM DIV MEUS_DADOS-->		
 		<div class="bloco" id="cursos">
 			<h3>Cursos</h3>
-			<h4>TADS</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<article class="detalhes">
-					<div class="det dt02">
-						<div><strong>22</strong><br>
-						<small>Disciplinas</small></div>
-					</div>
-					<div class="det dt03">
-						<div><strong>50</strong><br>
-						<small>Alunos</small></div>
-					</div>
-					<div class="det dt04">
-						<div><strong>8</strong><br>
-						<small>Professores</small></div>
-					</div><!-- FIM ARTICLE DETALHES -->
-					<div id="menu_curso">
-						<ul>
-							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-							<li><a href="#" title="">Excluir Curso</a></li>
-						</ul>
-					</div>
-				</article>
+				<div class="gray">
+					<h4>TADS</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+					<article class="detalhes">
+						<div class="det dt02">
+							<div><strong>22</strong><br>
+							<small>Disciplinas</small></div>
+						</div>
+						<div class="det dt03">
+							<div><strong>50</strong><br>
+							<small>Alunos</small></div>
+						</div>
+						<div class="det dt04">
+							<div><strong>8</strong><br>
+							<small>Professores</small></div>
+						</div><!-- FIM ARTICLE DETALHES -->
+						<div id="menu_curso">
+							<ul>
+								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+								<li><a href="#" title="">Excluir Curso</a></li>
+							</ul>
+						</div>
+					</article>					
+				</div>
+				<div class="ngray">
+					<h4>TADS</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+					<article class="detalhes">
+						<div class="det dt02">
+							<div><strong>22</strong><br>
+							<small>Disciplinas</small></div>
+						</div>
+						<div class="det dt03">
+							<div><strong>50</strong><br>
+							<small>Alunos</small></div>
+						</div>
+						<div class="det dt04">
+							<div><strong>8</strong><br>
+							<small>Professores</small></div>
+						</div><!-- FIM ARTICLE DETALHES -->
+						<div id="menu_curso">
+							<ul>
+								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+								<li><a href="#" title="">Excluir Curso</a></li>
+							</ul>
+						</div>
+					</article>					
+				</div>
+				<div class="gray">
+					<h4>TADS</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+					<article class="detalhes">
+						<div class="det dt02">
+							<div><strong>22</strong><br>
+							<small>Disciplinas</small></div>
+						</div>
+						<div class="det dt03">
+							<div><strong>50</strong><br>
+							<small>Alunos</small></div>
+						</div>
+						<div class="det dt04">
+							<div><strong>8</strong><br>
+							<small>Professores</small></div>
+						</div><!-- FIM ARTICLE DETALHES -->
+						<div id="menu_curso">
+							<ul>
+								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+								<li><a href="#" title="">Excluir Curso</a></li>
+							</ul>
+						</div>
+					</article>					
+				</div>
+				<div class="ngray">
+					<h4>TADS</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
+					<article class="detalhes">
+						<div class="det dt02">
+							<div><strong>22</strong><br>
+							<small>Disciplinas</small></div>
+						</div>
+						<div class="det dt03">
+							<div><strong>50</strong><br>
+							<small>Alunos</small></div>
+						</div>
+						<div class="det dt04">
+							<div><strong>8</strong><br>
+							<small>Professores</small></div>
+						</div><!-- FIM ARTICLE DETALHES -->
+						<div id="menu_curso">
+							<ul>
+								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
+								<li><a href="#" title="">Excluir Curso</a></li>
+							</ul>
+						</div>
+					</article>					
+				</div>
 
-				<h4>TADS</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<article class="detalhes">
-					<div class="det dt02">
-						<div><strong>22</strong><br>
-						<small>Disciplinas</small></div>
-					</div>
-					<div class="det dt03">
-						<div><strong>50</strong><br>
-						<small>Alunos</small></div>
-					</div>
-					<div class="det dt04">
-						<div><strong>8</strong><br>
-						<small>Professores</small></div>
-					</div><!-- FIM ARTICLE DETALHES -->
-					<div id="menu_curso">
-						<ul>
-							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-							<li><a href="#" title="">Excluir Curso</a></li>
-						</ul>
-					</div>
-				</article>
-
-				<h4>TADS</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<article class="detalhes">
-					<div class="det dt02">
-						<div><strong>22</strong><br>
-						<small>Disciplinas</small></div>
-					</div>
-					<div class="det dt03">
-						<div><strong>50</strong><br>
-						<small>Alunos</small></div>
-					</div>
-					<div class="det dt04">
-						<div><strong>8</strong><br>
-						<small>Professores</small></div>
-					</div><!-- FIM ARTICLE DETALHES -->
-					<div id="menu_curso">
-						<ul>
-							<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-							<li><a href="#" title="">Excluir Curso</a></li>
-						</ul>
-					</div>
-				</article>
 
 		</div><!-- FIM DIV CURSOS-->
 		<div class="bloco" id="disciplinas">
 			<h3>Disciplinas</h3>
-			<div>
+			<div class="gray">
 				<h4>Matemática</h4>
 				<p>Professor Fulano</p>
 				<p>Alunos: 66</p>
 				<p>
-				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Editar</a>
 				   <a href="#" title="">Excluir</a>
 				</p>			
 			</div>
-			<div>
+			<div class="ngray">
 				<h4>Matemática</h4>
 				<p>Professor Fulano</p>
 				<p>Alunos: 66</p>
 				<p>
-				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Editar</a>
 				   <a href="#" title="">Excluir</a>
 				</p>			
 			</div>
-			<div>
+			<div class="gray">
 				<h4>Matemática</h4>
 				<p>Professor Fulano</p>
 				<p>Alunos: 66</p>
 				<p>
-				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Editar</a> 
 				   <a href="#" title="">Excluir</a>
 				</p>			
 			</div>
-			<div>
+			<div class="ngray">
 				<h4>Matemática</h4>
 				<p>Professor Fulano</p>
 				<p>Alunos: 66</p>
 				<p>
-				   <a href="#" title="">Editar</a><br>
+				   <a href="#" title="">Editar</a>
 				   <a href="#" title="">Excluir</a>
 				</p>			
 			</div>

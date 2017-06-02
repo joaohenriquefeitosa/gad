@@ -39,6 +39,9 @@ div#clear{clear: both;}
 /*==========================================================================================*/
 /*=====================SECTION==============================================================*/
 /*==========================================================================================*/
+.gray{background-color:#eee; width: 90%; margin: 8px auto; padding: 5px 0;}
+.ngray{background-color:#fff; width: 90%; margin: 8px auto;}
+
 section.interface{width: 80%; float: right; background: #fff;}
 section.interface h1 {text-align: center; padding: 10px 0;}
 
@@ -59,7 +62,7 @@ section.interface article#corpo div#identificacao p {color: #000; padding: 0 20p
 /*BLOCOS*/
 section.interface article#corpo div.bloco {margin-bottom: 10px; color: #000;}
 section.interface article#corpo div.bloco h3 {padding-bottom: 5px; border-bottom: 1px solid #000; margin-bottom: 10px; padding: 10px;}
-section.interface article#corpo div#meus_dados table {width: 100%; text-align:left; font-weight: normal; padding: 10px;}
+section.interface article#corpo div#meus_dados table {margin: 0 auto; width: 90%; text-align:left; font-weight: normal; padding: 10px;}
 
 section.interface article#corpo div#cursos h4 {padding: 10px;}
 section.interface article#corpo div#cursos p {width: 40%; padding-left: 30px; padding-bottom: 10px;}
@@ -75,8 +78,6 @@ section.interface article#corpo div#disciplinas div h4 {padding-left: 20px;}
 section.interface article#corpo div#disciplinas div p {padding-left: 30px; padding-top: 4px;}
 section.interface article#corpo div#disciplinas div p a {font-size: 14px;}
 
-section.interface article#corpo div.gerenciaveis div p.gray{background-color:#eee; width: 90%; margin: 8px auto; padding: 5px 0;}
-section.interface article#corpo div.gerenciaveis div p.ngray{background-color:#fff; width: 90%; margin: 8px auto;}
 section.interface article#corpo div.gerenciaveis div p em {padding: 20px;}
 
 
