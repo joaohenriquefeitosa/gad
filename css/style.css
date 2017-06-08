@@ -5,7 +5,8 @@
 body{background-color: #303641; font-family: Arial, sans-serif; color: #9b9d9e;}
 
 #clear{clear: both;}
-
+.left {float: left;}
+.right {float: right;}
 
 
 
@@ -60,6 +61,7 @@ section.interface article#corpo div#identificacao {margin-bottom: 20px; padding-
 section.interface article#corpo div#identificacao p {color: #000; padding: 0 20px; font-size: 14px; text-align: right;}
 
 /*BLOCOS*/
+
 section.interface article#corpo div#meus_dados {display: none;}
 section.interface article#corpo div.bloco {margin-bottom: 10px; color: #000;}
 section.interface article#corpo div.bloco h3 {padding-bottom: 5px; border-bottom: 1px solid #000; margin-bottom: 10px; padding: 10px;}
@@ -87,6 +89,20 @@ section.interface article#corpo div#alunos {display: none;}
 section.interface article#corpo div.gerenciaveis div p em {padding: 20px;}
 
 
+section.interface article#corpo div#exercicios {display: none;}
+section.interface article#corpo div#exercicios h4 {padding: 10px;}
+section.interface article#corpo div#exercicios .quest{width: 40%; padding-left: 30px; padding-bottom: 10px;}
+section.interface article#corpo div#exercicios div#meus_exercicios {margin: 10px;}
+section.interface article#corpo div#exercicios div#meus_exercicios small{float: right; padding-right: 5px;}
+section.interface article#corpo div#exercicios div#meus_exercicios p {clear: both; padding: 5px 0;}
+
+section.interface article#corpo div#listas {display: none;}
+
+section.interface article#corpo div#assuntos {display: none;}
+
+section.interface article#corpo div#minhas_disciplinas {display: none;}
+
+section.interface article#corpo div#minhas_listas {display: none;}
 /*==========================================================================================*/
 /*=====================ASIDE================================================================*/
 /*==========================================================================================*/

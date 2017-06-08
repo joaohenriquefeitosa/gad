@@ -266,7 +266,6 @@
 	</header><!-- Fim header -->
 	<div id="menu">
 		<ul>
-			<li class="option">Painel de Controle</li>
 			<li class="option" id="click_meus_dados">Meus Dados</li>
 			<li class="option" id="click_cursos">Gerenciar Cursos
 				<ul>
