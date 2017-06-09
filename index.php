@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,35 +17,37 @@
 	</header><!-- /header -->
 
 	<?php 
+		require('./_app/Config.inc.php');
 
-	require('./_app/Config.inc.php');
+		$login = new Login(2);
 
-	$Dados = ['b_admiprof' => 24];
+		$dataLogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+		if(!empty($dataLogin['submitLogin'])):
+			$login->ExeLogin($dataLogin);
 
-	$Update = new Update;
-	$Update -> ExeUpdate('professor', $Dados, 'WHERE n_numeprof = :id', 'id=1');
+			if(!$login->getResult()):
+				GErro($login->getError()[0], $login->getError()[1]);
+			else:
+				header('Location: painel_admin.php');
+			endif;
 
-	if($Update->getResult()):
-		echo "{$Update->getRowCount()} dado(s) atualizados com sucesso!<hr>";
-	endif;
+		endif;
 
-	echo "<pre>";
-	print_r($Update);
-	echo "</pre>";
-
-	?>
+	 ?>
 
 	<section>
-		<form id="logcad">
+		<form id="logcad" method="post">
 			<div id="user">
 			<label for="iuser"><span><img src="img/user.png" alt=""></span></label>
-			<input type="text" name="nuser" id="iuser" value="email ou grr...">
+			<input type="text" name="user" id="iuser" value="email ou grr...">
 			</div>
 
 			<div id="pass">
 			<label for="ipass"><span><img src="img/padlock.png" alt=""></span></label>
-			<input type="text" name="npass" id="ipass" value="senha...">
+			<input type="text" name="pass" id="ipass" value="senha...">
 			</div>
+
+			<input type="submit" name="submitLogin">
 
 			<div id="enviar"><p>Login</p> <img src="img/login.png" alt=""><div id="clear"></div></div>
 			<div id="troca">Não é cadastrado? <a href="cadastro.php"><small>Clique aqui!</small></a></div>

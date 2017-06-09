@@ -29,14 +29,14 @@
 	// TRATAMENTO DE ERROS #####################################
 
 	// CSS CONSTANTES :: MENSAGENS DE ERRO #####################
-	define('ACCEPT', 'accpet');
-	define('INFOR', 'infor');
-	define('ALERT', 'alert');
-	define('ERROR', 'error');
+	define('GD_ACCEPT', 'accpet');
+	define('GD_INFOR', 'infor');
+	define('GD_ALERT', 'alert');
+	define('GD_ERROR', 'error');
 
 	// GERROR :: EXIBE ERROS LANÇADOS :: FRONT
 	function GError($ErrorMsg, $ErrorNo, $ErrorDie = null){
-		$CssClass = ($ErrNo == E_USER_NOTICE ? INFOR : ($ErrNo == E_USER_WARNING ? ALERT : ($ErrNo == E_USER_ERROR ? ERROR : $ErrNo)));
+		$CssClass = ($ErrNo == E_USER_NOTICE ? GD_INFOR : ($ErrNo == E_USER_WARNING ? GD_ALERT : ($ErrNo == E_USER_ERROR ? GD_ERROR : $ErrNo)));
 		echo "<p class=\"trigger.{$CssClass}\">{$ErrMsg}<span class=\"ajax_close\"></span></p>";
 
 		if($ErrDie):
@@ -46,7 +46,7 @@
 
 	// PHPErro :: personaliza o gatilho do PHP
 	function PHPErro($ErrNo, $ErrMsg, $ErrFile, $ErrLine){
-		$CssClass = ($ErrNo == E_USER_NOTICE ? INFOR : ($ErrNo == E_USER_WARNING ? ALERT : ($ErrNo == E_USER_ERROR ? ERROR : $ErrNo)));
+		$CssClass = ($ErrNo == E_USER_NOTICE ? GD_INFOR : ($ErrNo == E_USER_WARNING ? GD_ALERT : ($ErrNo == E_USER_ERROR ? GD_ERROR : $ErrNo)));
 		echo "<p class=\"trigger.{$CssClass}\">";
 		echo "<strong>Erro na Linha: #{$ErrLine} :: </strong> {$ErrMsg}<br/>";
 		echo "<small>{$ErrFile}</small>";

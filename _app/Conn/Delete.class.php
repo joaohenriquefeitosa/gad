@@ -22,6 +22,13 @@ class Delete extends Conn{
 
 
 	public function ExeDelete($Tabela, $Termos, $ParseString){
+		$this->Tabela = (string) $Tabela;
+		$this->Termos = (string) $Termos;
+
+		parse_str($ParseString, $this->Places);
+
+		$this->getSyntax();
+		$this->Execute();
 		
 	}
 
@@ -36,7 +43,7 @@ class Delete extends Conn{
 
 	public function setPlaces($ParseString){
 		parse_str($ParseString, $this->Places);
-		$this->getSyntax():
+		$this->getSyntax();
 		$this->Execute();
 	}
 
@@ -48,27 +55,18 @@ class Delete extends Conn{
 
 	private function Connect(){
 		$this->Conn = parent::getConn();
-		$this->Read = $this->Conn->prepare($this->Select);
-		$this->Read->setFetchMode(PDO::FETCH_ASSOC);
+		$this->Delete = $this->Conn->prepare($this->Delete);
 	}
 
 	private function getSyntax(){
-		if($this->Places):
-			foreach($this->Places as $Vinculo => $Valor):
-				if($Vinculo == 'limit' || $Vinculo == 'offset'):
-					$Valor = (int) $Valor;
-				endif;
-				$this->Read->bindValue(":{$Vinculo}", $Valor, (is_int($Valor) ? PDO::PARAM_INT : PDO::PARAM_STR));
-			endforeach;
-		endif;
+		$this->Delete = "DELETE FROM {$this->Tabela} {$this->Termos}";
 	}
 
 	private function Execute(){
 		$this->Connect();
 		try{
-			$this->getSyntax();
-			$this->Read->execute();
-			$this->Result = $this->Read->fetchAll();
+			$this->Delete->execute($this->Places);
+			$this->Result = true;
 		} catch(PDOException $e){
 			PHPErro($e->getCode(), $e->getMessage(), $e->getFile(), $e->getLine());
 			die;

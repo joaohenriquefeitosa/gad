@@ -13,6 +13,12 @@
 		<h1>G.A.D. Gerenciador de Atividades Dinâmico</h1>
 	</header><!-- /header -->
 
+	<?php 
+
+	echo md5(123456);
+	 ?>
+
+
 	<section>
 		<form id="logcad">
 			<div id="nome">
