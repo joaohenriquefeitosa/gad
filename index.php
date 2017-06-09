@@ -14,13 +14,6 @@
 	</header><!-- /header -->
 
 	<section>
-		<?php 
-			require('./_app/Config.inc.php');
-
-			$conn = new Conn();
-			var_dump($conn);
-
-		 ?>
 		<form id="logcad">
 			<div id="user">
 			<label for="iuser"><span><img src="img/user.png" alt=""></span></label>
