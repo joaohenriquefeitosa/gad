@@ -1,38 +1,28 @@
 <?php 
 
 /*
- * <strong>Read.class</strong>
- * Classe responsável por leituras genéricas no banco de dados!
+ * <strong>Delete.class</strong>
+ * Classe responsável por deletar genéricamente no banco de dados!
  *
  * @author João Henrique Feitosa
  */
 
-class Read extends Conn{
+class Delete extends Conn{
 
-	private $Select;
+	private $Tabela;
+	private $Termos;
 	private $Places;
 	private $Result;
 
 	/** @var PDOStatement */
-	private $Read;
+	private $Delete;
 
 	/** @var PDO */
 	private $Conn;
 
 
-	/**
-     * <b>ExeRead:</b> Executa uma leitura simplificada com Prepared Statments. Basta informar o nome da tabela,
-     * os termos da seleção e uma analize em cadeia (ParseString) para executar.
-     * @param STRING $Tabela = Nome da tabela
-     * @param STRING $Termos = WHERE | ORDER | LIMIT :limit | OFFSET :offset
-     * @param STRING $ParseString = link={$link}&link2={$link2}
-     */
-	public function ExeRead($Tabela, $Termos = null, $ParseString = null){
-		if(!empty($ParseString)):
-			parse_str($ParseString, $this->Places);
-		endif;
-		$this->Select = "SELECT * FROM {$Tabela} {$Termos}";
-		$this->Execute();
+	public function ExeDelete($Tabela, $Termos, $ParseString){
+		
 	}
 
 	public function getResult(){
@@ -43,16 +33,10 @@ class Read extends Conn{
 		return $this->Read->rowCount();
 	}
 
-	public function FullRead($Query, $ParseString = null){
-		$this->Select = (string) $Query;
-		if(!empty($ParseString)):
-			parse_str($ParseString, $this->Places);
-		endif;
-		$this->Execute();
-	}
 
 	public function setPlaces($ParseString){
 		parse_str($ParseString, $this->Places);
+		$this->getSyntax():
 		$this->Execute();
 	}
 

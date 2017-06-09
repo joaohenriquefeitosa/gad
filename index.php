@@ -13,6 +13,25 @@
 		<h1>G.A.D. Gerenciador de Atividades Dinâmico</h1>
 	</header><!-- /header -->
 
+	<?php 
+
+	require('./_app/Config.inc.php');
+
+	$Dados = ['b_admiprof' => 24];
+
+	$Update = new Update;
+	$Update -> ExeUpdate('professor', $Dados, 'WHERE n_numeprof = :id', 'id=1');
+
+	if($Update->getResult()):
+		echo "{$Update->getRowCount()} dado(s) atualizados com sucesso!<hr>";
+	endif;
+
+	echo "<pre>";
+	print_r($Update);
+	echo "</pre>";
+
+	?>
+
 	<section>
 		<form id="logcad">
 			<div id="user">
