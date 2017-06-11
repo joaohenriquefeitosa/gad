@@ -10,7 +10,6 @@
 
 class Cadastro{
 
-	private $Level;
 	private $Email;
 	private $Senha;
 	private $Error;
