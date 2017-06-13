@@ -69,6 +69,7 @@
 		##########################################################################################
 		-->
 
+		<!-- ############################### MEUS DADOS :: NOME ###############################-->
 		<div id="modalMeusDadosNome" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_nomeuser'];?></p>
@@ -79,6 +80,7 @@
 			</form>
 		</div>
 
+		<!-- ############################### MEUS DADOS :: EMAIL ###############################-->
 		<div id="modalMeusDadosEmail" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_mailuser'];?></p>
@@ -89,6 +91,7 @@
 			</form>
 		</div>
 
+		<!-- ############################### MEUS DADOS :: CURSO ###############################-->
 		<div id="modalMeusDadosCurso" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
@@ -99,6 +102,7 @@
 			</form>
 		</div>
 
+		<!-- ############################### MEUS DADOS :: SENHA ###############################-->
 		<div id="modalMeusDadosSenha" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
@@ -109,7 +113,151 @@
 			</form>
 		</div>
 
+		<!-- ################################# ADICIONA CURSO #################################-->
+		<div id="modalAddCurso" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ###################### ADICIONAR OU REMOVER DISCIPLINA NO CURSO ##################-->
+		<div id="modalAddCurso" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################ ADICIONA DISCIPLINA ##############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR DISCIPLINA ###############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# ADICIONAR ASSUNTO ###############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR ASSUNTO #################################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# CRIAR NOVA LISTA ###############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR LISTA #################################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# CRIAR NOVO EXERCICIO ##########################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR EXERCICIO ##############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- #################################### VER EXERCICIO ##############################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# ADICIONA PROFESSOR ###############################-->
 		<div id="modalAddProfessor" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR PROFESSOR #################################-->
+		<div id="modalAddDisciplina" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<!-- ################################# EDITAR ALUNOS ###################################-->
+		<div id="modalAddDisciplina" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
 			<form method="post" accept-charset="utf-8">
@@ -354,12 +502,12 @@
 			<li class="option" id="click_meus_dados">Meus Dados</li>
 			<li class="option" id="click_cursos">Gerenciar Cursos
 				<ul>
-					<li id="click_sub_cursos"><a href="#modalAddProfessor" title="">Adicionar Curso</a></li>
+					<li id="click_sub_cursos"><a href="#modalAddCurso" title="">Adicionar Curso</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_disciplinas">Gerenciar Disciplinas
 				<ul>
-					<li id="click_sub_disciplinas"><a href="#modalAddProfessor" title="">Adicionar Disciplina</a></li>
+					<li id="click_sub_disciplinas"><a href="#modalAddDisciplina" title="">Adicionar Disciplina</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_professores">Gerenciar Professores
