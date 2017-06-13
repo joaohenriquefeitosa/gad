@@ -38,6 +38,10 @@ class Create extends Conn{
 		return $this->Result;
 	}
 
+	public function getDados(){
+		return $this->Dados;
+	}
+
 	/**
 	 * ****************************************
 	 * ************ PRIVATE METHODS ***********
