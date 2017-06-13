@@ -58,6 +58,7 @@
 			<div id="troca">Não é cadastrado? <a href="cadastro.php"><small>Clique aqui!</small></a></div>
 		</form>
 	</section>
+
 	
 </body>
 </html>

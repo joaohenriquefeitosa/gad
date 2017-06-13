@@ -24,10 +24,6 @@
 		header('Location: index.php?');
 	endif;
 
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "</pre>";
-
  ?>
 
 <!DOCTYPE html>
@@ -38,6 +34,7 @@
 	<title>Seja Bem Vindo ao Painel de Controle</title>
 	<script type="text/javascript" src="js/menu.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 <section class="interface">
@@ -66,7 +63,61 @@
 			<p><small>Não é você? <?php echo "<a href=\"".$_SERVER['REQUEST_URI'].'?exe=logoff">'; ?>Clique aqui!</a></small></p>
 		</div><!-- FIM DIV IDENTIFICAÇÃO-->
 
+		<!--
+		##########################################################################################
+		######################################## MODALS ##########################################
+		##########################################################################################
+		-->
 
+		<div id="modalMeusDadosNome" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_nomeuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<div id="modalMeusDadosEmail" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_mailuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<div id="modalMeusDadosCurso" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<div id="modalMeusDadosSenha" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
+
+		<div id="modalAddProfessor" class="modal">			
+			<a href="#fechar" title="Fechar" class="fechar">X</a>
+			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<form method="post" accept-charset="utf-8">
+				<p><label for="nome">Digite o novo nome aqui:</label>
+				input<input type="text" name="nome"></p>
+				<input type="submit" name="submitMeusDadosNome">
+			</form>
+		</div>
 
 		<div class="bloco" id="meus_dados">
 			<h3>Meus Dados</h3>
@@ -74,22 +125,22 @@
 				<tr class="gray">
 					<th><strong>Nome: </strong></th>
 					<th><?php echo $_SESSION['userlogin']['c_nomeuser'];?></th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosNome" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Email: </strong></th>
 					<th><?php echo $_SESSION['userlogin']['c_mailuser'];?></th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosEmail" title="">Alterar</a></th>
 				</tr>
 				<tr class="gray">
 					<th><strong>Curso: </strong></th>
 					<th><?php echo $_SESSION['userlogin']['c_cursuser'];?></th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosCurso" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Senha: </strong></th>
 					<th>****</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosSenha" title="">Alterar</a></th>
 				</tr>
 			</table>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -303,17 +354,17 @@
 			<li class="option" id="click_meus_dados">Meus Dados</li>
 			<li class="option" id="click_cursos">Gerenciar Cursos
 				<ul>
-					<li id="click_sub_cursos">Adicionar Curso</li>
+					<li id="click_sub_cursos"><a href="#modalAddProfessor" title="">Adicionar Curso</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_disciplinas">Gerenciar Disciplinas
 				<ul>
-					<li id="click_sub_disciplinas">Adicionar Disciplina</li>
+					<li id="click_sub_disciplinas"><a href="#modalAddProfessor" title="">Adicionar Disciplina</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_professores">Gerenciar Professores
 				<ul>
-					<li id="click_sub_professores">Adicionar Professor</li>
+					<li id="click_sub_professores" class="submenu"><a href="#modalAddProfessor" title="">Adicionar Professor</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_alunos">Gerenciar Alunos</li>
@@ -322,6 +373,6 @@
 	</div>
 </aside>	
 <div id="clear"></div>
-	
+
 </body>
 </html>

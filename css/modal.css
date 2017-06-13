@@ -23,11 +23,13 @@
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
 	background: -o-linear-gradient(#fff, #999);
+	display: none;
 }
 
 .modal:target {
 	opacity:1;
 	pointer-events: auto;
+	display: block;
 }
 
 .fechar {

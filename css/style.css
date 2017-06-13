@@ -115,6 +115,7 @@ aside.interface img{padding: 10px;  padding: 15px 20px; }
 /*MENU*/
 aside.interface ul li.option {border-bottom: 1px solid #929292; padding: 10px 20px; list-style: none; cursor: pointer;}
 aside.interface li ul li{list-style: none; padding: 10px 0 0 30px; display: none;}
+aside.interface li a {text-decoration: none; color: #9b9d9e;}
 
 /*==========================================================================================*/
 /*======================FOOTER==============================================================*/
