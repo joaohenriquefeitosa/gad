@@ -1,3 +1,35 @@
+<?php 
+	session_start();
+	require('./_app/Config.inc.php');
+
+	$login = new Login();
+	$exe = filter_input(INPUT_GET, 'exe');
+	echo $exe;
+
+
+	if(!$login->CheckLogin()):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?exe=restrito');
+	else:
+		$userlogin = $_SESSION['userlogin'];
+	endif;
+
+	if($_SESSION['userlogin']["n_niveuser"] != 3):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?');
+	endif;
+
+	if($exe == 'logoff'):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?');
+	endif;
+
+	echo "<pre>";
+	print_r($_SESSION);
+	echo "</pre>";
+
+ ?>
+ 
 <!DOCTYPE html>
 <html>
 <head>

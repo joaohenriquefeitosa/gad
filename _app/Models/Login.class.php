@@ -16,10 +16,6 @@ class Login{
 	private $Error;
 	private $Result;
 
-	function __construct($Level){
-		$this->Level = (int) $Level;
-	}
-
 	public function ExeLogin(array $UserData){
 		$this->Email = (string) $UserData['user'];
 		$this->Senha = (string) $UserData['pass'];
@@ -43,13 +39,17 @@ class Login{
 		endif;
 	}
 
+	public function getLevel(){
+		return $this->Level;
+	}
+
 	/**
 	 * ****************************************
 	 * ************ PRIVATE METHODS ***********
 	 * ****************************************
 	 */
 	
-	public function setLogin(){
+	private function setLogin(){
 		if(!$this->Email || !$this->Senha /*|| !Check::Email($this->Email)*/):
 			$this->Error = ['Informe seu E-mail e senha para efetuar o login!', GD_ALERT];
 		elseif(!$this->getUser()):
@@ -59,17 +59,24 @@ class Login{
 		endif;
 	}
 
-	public function getUser(){
+	private function getUser(){
 		$this->Senha = md5($this->Senha);
 
 		$read = new Read;
-		$read->ExeRead('professor', "WHERE c_mailprof = :e AND c_passprof = :p", "e={$this->Email}&p={$this->Senha}");
+		$read->ExeRead(TABELA, "WHERE c_mailuser = :e AND c_passuser = :p", "e={$this->Email}&p={$this->Senha}");
 		if($read->getResult()):
 			$this->Result = $read->getResult()[0];
+			$this->setLevel();
+			
+			var_dump($this->Result);
 			return true;
 		else:
 			return false;
 		endif;
+	}
+
+	private function setLevel(){
+		$this->Level = (int) $this->Result["n_niveuser"];
 	}
 
 	private function Execute(){
@@ -78,7 +85,7 @@ class Login{
 		endif;
 
 		$_SESSION['userlogin'] = $this->Result;
-		$this->Error = ["Olá {$this->Result['c_nomeprof']}, seja bem vindo(a)."];
+		$this->Error = ["Olá {$this->Result['c_nomeuser']}, seja bem vindo(a)."];
 		$this->Result = true;
 	}
 }

@@ -1,3 +1,35 @@
+<?php 
+	session_start();
+	require('./_app/Config.inc.php');
+
+	$login = new Login();
+	$exe = filter_input(INPUT_GET, 'exe');
+	echo $exe;
+
+
+	if(!$login->CheckLogin()):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?exe=restrito');
+	else:
+		$userlogin = $_SESSION['userlogin'];
+	endif;
+
+	if($_SESSION['userlogin']["n_niveuser"] != 3):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?');
+	endif;
+
+	if($exe == 'logoff'):
+		unset($_SESSION['userlogin']);
+		header('Location: index.php?');
+	endif;
+
+	echo "<pre>";
+	print_r($_SESSION);
+	echo "</pre>";
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,26 +62,28 @@
 	</article>
 	<article id="corpo">
 		<div id="identificacao">
-			<p>Seja bem vindo, Adm. João Henrique.</p>
-			<p><small>Não é você? <a href="#" title="">Clique aqui!</a></small></p>
+			<p>Seja bem vindo, Adm. <?php echo $_SESSION['userlogin']['c_nomeuser'];?></p>
+			<p><small>Não é você? <?php echo "<a href=\"".$_SERVER['REQUEST_URI'].'?exe=logoff">'; ?>Clique aqui!</a></small></p>
 		</div><!-- FIM DIV IDENTIFICAÇÃO-->
+
+
 
 		<div class="bloco" id="meus_dados">
 			<h3>Meus Dados</h3>
 			<table>
 				<tr class="gray">
 					<th><strong>Nome: </strong></th>
-					<th>João Henrique Feitosa</th>
+					<th><?php echo $_SESSION['userlogin']['c_nomeuser'];?></th>
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Email: </strong></th>
-					<th>joaohenriquefsf@gmail.com</th>
+					<th><?php echo $_SESSION['userlogin']['c_mailuser'];?></th>
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
 				<tr class="gray">
 					<th><strong>Curso: </strong></th>
-					<th>TADS</th>
+					<th><?php echo $_SESSION['userlogin']['c_cursuser'];?></th>
 					<th><a href="#" title="">Alterar</a></th>
 				</tr>
 				<tr>

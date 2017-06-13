@@ -14,6 +14,7 @@ class Cadastro{
 	private $Curso;
 	private $Email;
 	private $Senha;
+	private $Nivel;
 	private $Error;
 	private $Result;
 
@@ -26,6 +27,8 @@ class Cadastro{
 		$this->Email = (string) $UserData['email'];
 		$this->Curso = (string) $UserData['curso'];
 		$this->Senha = (string) $UserData['pass'];
+		$this->Nivel = (int) 1;
+
 
 		$this->Cadastrar();
 
@@ -57,10 +60,14 @@ class Cadastro{
 		
 		$create = new Create();
 
-		$query= ['c_nomeprof' => $this->Nome, 'c_mailprof' => $this->Email, 'b_admiprof' => 1 , 'c_passprof' => $this->Senha];
+		$query= ['c_nomeuser' => $this->Nome,
+				 'c_mailuser' => $this->Email,
+				 'n_niveuser' => $this->Nivel, 
+				 'n_niveuser' => $this->Curso,
+				 'c_passprof' => $this->Senha];
 
 
-		$create -> ExeCreate('professor', $query);
+		$create -> ExeCreate(TABELA, $query);
 
 		if($create->getResult()):
 			$this->Result = $create->getResult()[0];
@@ -93,7 +100,7 @@ class Cadastro{
 		$this->Cadastrar();
 
 		$_SESSION['userCadastro'] = $this->Result;
-		$this->Error = ["Olá {$this->Result['c_nomeprof']}, seja bem vindo(a)."];
+		$this->Error = ["Olá {$this->Result['c_nomeuser']}, seja bem vindo(a)."];
 		$this->Result = true;
 
 	}

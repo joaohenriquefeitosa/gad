@@ -4,7 +4,7 @@
 	define('HOST','localhost');
 	define('USER','john');
 	define('PASS','');
-	define('DBSA','ged');
+	define('DBSA','gad');
 
 	// CONFIGURAÇÕES DO SITE #####################################
 	function __autoload($Class){
@@ -58,5 +58,9 @@
 	}
 
 	set_error_handler('PHPErro');
+
+
+	// TABELAS DO SISTEMA
+	define('TABELA', 'user');
 
  ?>

@@ -19,21 +19,26 @@
 	<?php 
 		require('./_app/Config.inc.php');
 
-		$login = new Login(2);
+		$login = new Login();
 
 		$dataLogin = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 		if(!empty($dataLogin['submitLogin'])):
 			$login->ExeLogin($dataLogin);
+			$level = $login->getLevel();
 
 			if(!$login->getResult()):
 				GErro($login->getError()[0], $login->getError()[1]);
 			else:
-				header('Location: painel_admin.php');
+				if($level == 3)
+					header('Location: painel_admin.php');
+				if($level == 2)
+					header('Location: painel_professor.php');
+				if($level == 1)
+					header('Location: painel_aluno.php');
 			endif;
-
 		endif;
 
-	 ?>
+	?>
 
 	<section>
 		<form id="logcad" method="post">
