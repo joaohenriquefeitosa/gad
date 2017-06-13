@@ -18,17 +18,15 @@ class Cadastro{
 	private $Error;
 	private $Result;
 
-	function __construct(){
-
+	function __construct($Level){
+		$this->Nivel = (int) $Level;
 	}
 
 	public function ExeCadastro(array $UserData){
 		$this->Nome = (string) $UserData['user'];
 		$this->Email = (string) $UserData['email'];
-		$this->Curso = (string) $UserData['curso'];
+		$this->Curso = !empty($UserData['curso']) ? $UserData['curso'] : null;
 		$this->Senha = (string) $UserData['pass'];
-		$this->Nivel = (int) 1;
-
 
 		$this->Cadastrar();
 
@@ -63,9 +61,8 @@ class Cadastro{
 		$query= ['c_nomeuser' => $this->Nome,
 				 'c_mailuser' => $this->Email,
 				 'n_niveuser' => $this->Nivel, 
-				 'n_niveuser' => $this->Curso,
-				 'c_passprof' => $this->Senha];
-
+				 'c_cursuser' => $this->Curso,
+				 'c_passuser' => $this->Senha];
 
 		$create -> ExeCreate(TABELA, $query);
 

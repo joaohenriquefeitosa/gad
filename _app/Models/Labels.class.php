@@ -2,23 +2,24 @@
 
 /*
  * Curso.class.php [MODEL]
- * Responsável por gerenciar os cursos do sistema;
+ * Responsável por gerenciar os rótulos com Curso, Disciplina e Lista do sistema;
  *
  * @author João Henrique Feitosa
  */
 
- class Curso{
+ class Labels{
 
 	private $Data;
+	private $Tabela;
 	private $CursoNome;
 	private $Query;
 	private $Error;
 	private $Result; 
 
 	// Nome da tabela no banco de dados;
-	const Entity = 'curso';
-
-	public function ExeCreate(array $Data){
+	
+	public function ExeCreate($Tabela, array $Data){
+		$this->Tabela = $Tabela;
 		$this->Data = $Data;
 
 		if(in_array('', $this->Data)):
@@ -47,16 +48,22 @@
 	private function setNome(){
 		$this->Data = array_map('strip_tags', $this->Data);
 		$this->Data = array_map('trim', $this->Data);
-		$this->CursoNome = (string) $this->Data['modcurso'];
+		$this->CursoNome = (string) $this->Data['label'];
 	}
 
 	private function getQuery(){
-		$this->Query = ['c_nomecurs' => $this->CursoNome];
+		if ($this->Tabela == 'curso'):
+			$this->Query = ['c_nomecurs' => $this->CursoNome];
+		elseif ($this->Tabela == 'disciplina'):
+			$this->Query = ['c_nomedisc' => $this->CursoNome];
+		elseif ($this->Tabela == 'lista'):
+			$this->Query = ['c_nomelista' => $this->CursoNome];
+		endif;
 	}
 
 	private function Create(){
 		$Create = new Create;
-		$Create -> ExeCreate(self::Entity, $this->Query);
+		$Create -> ExeCreate($this->Tabela, $this->Query);
 		if($Create->getResult()):
 			$this->Result = $Create->getResult();
 			//$this->Error = ["<strong>Sucesso:</strong> O Curso {$this->CursoNome} foi cadastrada no sistema.", ALERT];

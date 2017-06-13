@@ -20,7 +20,7 @@
 	<?php 
 		require('./_app/Config.inc.php');
 
-		$cadastro = new Cadastro();
+		$cadastro = new Cadastro(1);
 
 		$dataCadastro = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
