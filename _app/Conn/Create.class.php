@@ -42,6 +42,10 @@ class Create extends Conn{
 		return $this->Dados;
 	}
 
+	public function getLastId(){
+		return $this->Conn->lastInsertId();
+	}
+
 	/**
 	 * ****************************************
 	 * ************ PRIVATE METHODS ***********

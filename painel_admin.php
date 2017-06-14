@@ -95,172 +95,88 @@
 		</div><!-- FIM DIV MEUS_DADOS-->		
 		<div class="bloco" id="cursos">
 			<h3>Cursos</h3>
-				<div class="gray">
-					<h4>TADS</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-					<article class="detalhes">
-						<div class="det dt02">
-							<div><strong>22</strong><br>
-							<small>Disciplinas</small></div>
-						</div>
-						<div class="det dt03">
-							<div><strong>50</strong><br>
-							<small>Alunos</small></div>
-						</div>
-						<div class="det dt04">
-							<div><strong>8</strong><br>
-							<small>Professores</small></div>
-						</div><!-- FIM ARTICLE DETALHES -->
-						<div id="menu_curso">
-							<ul>
-								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-								<li><a href="#" title="">Excluir Curso</a></li>
-							</ul>
-						</div>
-					</article>					
-				</div>
-				<div class="ngray">
-					<h4>TADS</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-					<article class="detalhes">
-						<div class="det dt02">
-							<div><strong>22</strong><br>
-							<small>Disciplinas</small></div>
-						</div>
-						<div class="det dt03">
-							<div><strong>50</strong><br>
-							<small>Alunos</small></div>
-						</div>
-						<div class="det dt04">
-							<div><strong>8</strong><br>
-							<small>Professores</small></div>
-						</div><!-- FIM ARTICLE DETALHES -->
-						<div id="menu_curso">
-							<ul>
-								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-								<li><a href="#" title="">Excluir Curso</a></li>
-							</ul>
-						</div>
-					</article>					
-				</div>
-				<div class="gray">
-					<h4>TADS</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-					<article class="detalhes">
-						<div class="det dt02">
-							<div><strong>22</strong><br>
-							<small>Disciplinas</small></div>
-						</div>
-						<div class="det dt03">
-							<div><strong>50</strong><br>
-							<small>Alunos</small></div>
-						</div>
-						<div class="det dt04">
-							<div><strong>8</strong><br>
-							<small>Professores</small></div>
-						</div><!-- FIM ARTICLE DETALHES -->
-						<div id="menu_curso">
-							<ul>
-								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-								<li><a href="#" title="">Excluir Curso</a></li>
-							</ul>
-						</div>
-					</article>					
-				</div>
-				<div class="ngray">
-					<h4>TADS</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-					<article class="detalhes">
-						<div class="det dt02">
-							<div><strong>22</strong><br>
-							<small>Disciplinas</small></div>
-						</div>
-						<div class="det dt03">
-							<div><strong>50</strong><br>
-							<small>Alunos</small></div>
-						</div>
-						<div class="det dt04">
-							<div><strong>8</strong><br>
-							<small>Professores</small></div>
-						</div><!-- FIM ARTICLE DETALHES -->
-						<div id="menu_curso">
-							<ul>
-								<li><a href="#" title="">Adicionar/Remover Disciplina</a></li>
-								<li><a href="#" title="">Excluir Curso</a></li>
-							</ul>
-						</div>
-					</article>					
-				</div>
+				<?php 
+				$readCourse = new read();
+				$readCourse -> FullRead("SELECT COUNT(*) FROM curso");
+				$NumElem = $readCourse -> getResult()[0]["COUNT(*)"];
+				$readCourse -> ExeRead('curso');
+				$ArrCursos = $readCourse -> getResult();
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					$count = 2;
+					echo "<div class=\"gray\">";
+					
+						echo "<h4>{$ArrCursos[$x]['c_nomecurs']}</h4>";
 
+						echo "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>";
 
-		</div><!-- FIM DIV CURSOS-->
+						echo "<article class='detalhes'>
+								<div class='det dt02'>
+									<div><strong>22</strong><br>
+									<small>Disciplinas</small></div>
+								</div>
+								<div class='det dt03'>
+									<div><strong>50</strong><br>
+									<small>Alunos</small></div>
+								</div>
+								<div class='det dt04'>
+									<div><strong>8</strong><br>
+									<small>Professores</small></div>
+								</div><!-- FIM ARTICLE DETALHES -->
+								<div id='menu_curso'>
+									<ul>
+										<li><a href='#'' title=''>Adicionar/Remover Disciplina</a></li>
+										<li><a href='#'' title=''>Excluir Curso</a></li>
+									</ul>
+								</div>
+							  </article>
+						</div>";}?>
+							    
+			</div><!-- FIM DIV CURSOS-->					
+				
 		<div class="bloco" id="disciplinas">
 			<h3>Disciplinas</h3>
-			<div class="gray">
-				<h4>Matemática</h4>
-				<p>Professor Fulano</p>
-				<p>Alunos: 66</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
-			<div class="ngray">
-				<h4>Matemática</h4>
-				<p>Professor Fulano</p>
-				<p>Alunos: 66</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
-			<div class="gray">
-				<h4>Matemática</h4>
-				<p>Professor Fulano</p>
-				<p>Alunos: 66</p>
-				<p>
-				   <a href="#" title="">Editar</a> 
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
-			<div class="ngray">
-				<h4>Matemática</h4>
-				<p>Professor Fulano</p>
-				<p>Alunos: 66</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
+				<?php 
+				$readDisc = new read();
+				$readDisc -> FullRead("SELECT COUNT(*) FROM disciplina");
+				$NumElem = $readDisc -> getResult()[0]["COUNT(*)"];
+				$readDisc -> ExeRead('disciplina');
+				$ArrDisc = $readDisc -> getResult();
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					echo "<div class=\"gray\">";
+					echo   "<h4>{$ArrDisc[$x]['c_nomedisc']}</h4>";
+					echo   "<p>Professor Fulano</p>
+							<p>Alunos: 66</p>
+							<p>
+							   <a href='#' title=''>Editar</a>
+							   <a href='#' title=''>Excluir</a>
+							</p>		
+						  </div>";	}?>
 		</div><!-- FIM DIV DISCIPLINAS-->
+				
+
 
 		<div class="bloco gerenciaveis" id="professores">
 			<h3>Professores</h3>
 				<div>
-					<p class="gray">
-						<strong>João Henrique Feitosa</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>João Henrique Feitosa</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="gray">
-						<strong>João Henrique Feitosa</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>João Henrique Feitosa</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
+					<?php 
+					$readProf = new read();
+					$readProf -> FullRead("SELECT COUNT(*) FROM user WHERE n_niveuser = 2");
+					$NumElem = $readProf -> getResult()[0]["COUNT(*)"];
+					$readProf -> ExeRead('user', 'WHERE n_niveuser = 2');
+					$ArrProf = $readProf -> getResult();
+					
+					for($x = 0; $x < $NumElem; $x ++){
+
+						echo "<p class=\"gray\">";
+								echo "<strong>{$ArrProf[$x]['c_nomeuser']}</strong>";
+								echo "<em>Matemática </em>";
+								echo "<a href='#' title=''>Editar</a>
+								<a href='#' title=''>Excluir</a>
+							 </p>";
+
+					}?>
 				</div>				
 			</div>
 		</div><!-- FIM DIV PROFESSORES-->
@@ -268,26 +184,22 @@
 		<div class="bloco gerenciaveis" id="alunos">
 			<h3>Alunos</h3>
 				<div>
-					<p class="gray">
-						<strong>João Henrique Feitosa</strong>  
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>João Henrique Feitosa</strong>  
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="gray">
-						<strong>João Henrique Feitosa</strong>  
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>João Henrique Feitosa</strong>  
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
+					<?php 
+					$readAlun = new read();
+					$readAlun -> FullRead("SELECT COUNT(*) FROM user WHERE n_niveuser = 1");
+					$NumElem = $readAlun -> getResult()[0]["COUNT(*)"];
+					$readAlun -> ExeRead('user', 'WHERE n_niveuser = 1');
+					$ArrAlun = $readAlun -> getResult();
+					
+					for($x = 0; $x < $NumElem; $x ++){
+
+						echo "<p class=\"gray\">";
+								echo "<strong>{$ArrAlun[$x]['c_nomeuser']}</strong> ";
+								echo "<a href='#' title=''>Editar</a>
+								<a href='#' title=''>Excluir</a>
+							 </p>";
+
+					}?>
 				</div>				
 			</div>
 		</div><!-- FIM DIV PROFESSORES-->

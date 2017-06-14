@@ -17,6 +17,7 @@ class Cadastro{
 	private $Nivel;
 	private $Error;
 	private $Result;
+	private $LastID;
 
 	function __construct($Level){
 		$this->Nivel = (int) $Level;
@@ -38,6 +39,10 @@ class Cadastro{
 
 	public function getResult(){
 		return $this->Result;
+	}
+
+	public function getLastId(){
+		return $this->LastID;
 	}
 
 	/**
@@ -65,6 +70,8 @@ class Cadastro{
 				 'c_passuser' => $this->Senha];
 
 		$create -> ExeCreate(TABELA, $query);
+
+		$this->LastID = $create ->getLastId();
 
 		if($create->getResult()):
 			$this->Result = $create->getResult()[0];

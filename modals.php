@@ -208,13 +208,15 @@
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<?php 
 				$post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+				$cadastro = new Cadastro(2);
+				$disciplina = "";
 				if(!empty($post['submitAddPRofessor'])):
 					unset($post['submitAddPRofessor']);
 					
 					$disciplina = $post['disciplina'];
 					unset($post['disciplina']);
 			
-					$cadastro = new Cadastro(2);
+					
 					
 					if(!empty($post)):
 						$cadastro->ExeCadastro($post);
@@ -231,6 +233,15 @@
 
 				$read = new Read;
 				$read -> ExeRead('disciplina');
+
+				$leciona  = ['n_numeuser' => $cadastro->getLastId(), 'n_numedisc' => $disciplina];
+
+				if($disciplina):
+					$create = new Create;
+					$create->ExeCreate('leciona', $leciona);
+				endif;
+				
+				
 			?>		
 
 
