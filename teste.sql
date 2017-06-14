@@ -1,0 +1,1 @@
+SELECT c_nomelist, c_nomedisc, c_nomeassu FROM contem, possui, lista, disciplina, assunto WHERE contem.n_numedisc = disciplina.n_numedisc AND contem.n_numeassu = assunto.n_numeassu AND contem.n_numeassu = possui.n_numeassu AND possui.n_numelist = lista.n_numelist order by(c_nomedisc);

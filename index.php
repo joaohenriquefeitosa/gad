@@ -27,7 +27,7 @@
 			$level = $login->getLevel();
 
 			if(!$login->getResult()):
-				GErro($login->getError()[0], $login->getError()[1]);
+				//GErro($login->getError()[0], $login->getError()[1]);
 			else:
 				if($level == 3)
 					header('Location: painel_admin.php');

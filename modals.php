@@ -1,8 +1,17 @@
 <!--
+
 		##########################################################################################
 		######################################## MODALS ##########################################
 		##########################################################################################
 		-->
+
+	
+	<?php 
+
+	require('_app/Models/Exercicio.class.php');
+	require('_app/Models/Labels.class.php');
+
+	 ?>
 
 		<!-- ############################### MEUS DADOS :: NOME ###############################-->
 		<div id="modalMeusDadosNome" class="modal">			
@@ -55,7 +64,7 @@
 				if(!empty($post['submitAddCurso'])):
 					unset($post['submitAddCurso']);
 
-					require('_app/Models/Labels.class.php');
+					
 					$cadastra = new Labels;
 					$cadastra -> ExeCreate('curso', $post);
 
@@ -98,7 +107,7 @@
 				if(!empty($post['submitAddDisciplina'])):
 					unset($post['submitAddDisciplina']);
 
-					require('_app/Models/Labels.class.php');
+					
 					$cadastra = new Labels;
 					$cadastra -> ExeCreate('disciplina', $post);
 
@@ -116,7 +125,7 @@
 		</div>
 
 		<!-- ################################# EDITAR DISCIPLINA ###############################-->
-		<div id="modalAddDisciplina" class="modal">			
+		<div id="modalEditDisciplina" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
 			<form method="post" accept-charset="utf-8">
@@ -127,13 +136,51 @@
 		</div>
 
 		<!-- ################################# ADICIONAR ASSUNTO ###############################-->
-		<div id="modalAddDisciplina" class="modal">			
+		<div id="modalAddAssunto" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
-			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+
+
+			<?php 
+				$post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+				$disciplina = "";
+				
+				$cadastraDisc = new Labels;
+				if(!empty($post['submitAddAssunto'])):
+					unset($post['submitAddAssunto']);
+
+					$disciplina = $post['disciplina'];
+					unset($post['disciplina']);
+
+					$cadastraDisc->ExeCreate('assunto', $post);
+					if(!$cadastraDisc->getResult()):
+						//GError($cadastra->getError()[0], $cadastra->getError()[1]);
+					endif;
+				endif;
+
+				$read = new Read;
+				$read -> ExeRead('disciplina');
+
+				$contem  = ['n_numeassu' => $cadastraDisc->getLastId(), 'n_numedisc' => $disciplina];
+
+				if($disciplina):
+					$create = new Create;
+					$create->ExeCreate('contem', $contem);
+				endif;
+			 ?>	
+			 <h3>ADICIONAR ASSUNTO</h3>
+
 			<form method="post" accept-charset="utf-8">
-				<p><label for="nome">Digite o novo nome aqui:</label>
-				input<input type="text" name="nome"></p>
-				<input type="submit" name="submitMeusDadosNome">
+				<p><label for="label">Novo Assunto:</label>
+				<input type="text" name="label"></p>
+				<select name="disciplina" id="idisciplina">
+					<option value="" selected></option>
+					<?php
+						foreach ($read->getResult() as $value) {
+							echo "<option value=\"{$value['n_numedisc']}\">{$value['c_nomedisc']}</option>";
+						}
+					?>
+				</select>
+				<input type="submit" name="submitAddAssunto">
 			</form>
 		</div>
 
@@ -149,13 +196,49 @@
 		</div>
 
 		<!-- ################################# CRIAR NOVA LISTA ###############################-->
-		<div id="modalAddDisciplina" class="modal">			
-			<a href="#fechar" title="Fechar" class="fechar">X</a>
-			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+		<div id="modalAddNovaLista" class="modal">		
+		<a href="#fechar" title="Fechar" class="fechar">X</a>	
+			<?php 
+				$post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+				$assunto = "";
+
+				$cadastraList = new Labels;
+				if(!empty($post['submitAddNovaLista'])):
+					unset($post['submitAddNovaLista']);
+
+					$assunto = $post['assunto'];
+					unset($post['assunto']);
+
+					$cadastraList->ExeCreate('lista', $post);
+					if(!$cadastraList->getResult()):
+						//GError($cadastra->getError()[0], $cadastra->getError()[1]);
+					endif;
+				endif;
+
+				$read = new Read;
+				$read -> ExeRead('assunto');
+
+				$possui  = ['n_numelist' => $cadastraList->getLastId(), 'n_numeassu' => $assunto];
+
+				if($assunto):
+					$create = new Create;
+					$create->ExeCreate('possui', $possui);
+				endif;
+
+			?>	
+			<h3>Criar Nova Lista</h3>
 			<form method="post" accept-charset="utf-8">
-				<p><label for="nome">Digite o novo nome aqui:</label>
-				input<input type="text" name="nome"></p>
-				<input type="submit" name="submitMeusDadosNome">
+				<p><label for="nome">Digite a nova lista:</label>
+				<input type="text" name="label"></p>
+				<select name="assunto" id="iassunto">
+					<option value="" selected></option>
+					<?php
+						foreach ($read->getResult() as $value) {
+							echo "<option value=\"{$value['n_numeassu']}\">{$value['c_nomeassu']}</option>";
+						}
+					?>
+				</select>				
+				<input type="submit" name="submitAddNovaLista">
 			</form>
 		</div>
 
@@ -171,13 +254,65 @@
 		</div>
 
 		<!-- ################################# CRIAR NOVO EXERCICIO ##########################-->
-		<div id="modalAddDisciplina" class="modal">			
+		<div id="modalCriaNovoExercicio" class="modal">			
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
-			<p>Nome: <?php echo $_SESSION['userlogin']['c_cursuser'];?></p>
+			<?php 
+				$post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+				$lista = "";
+				
+				$Exercicio = new Exercicio;
+
+				if(!empty($post['submitCriaNovoExercicio'])):
+					unset($post['submitCriaNovoExercicio']);
+
+					$lista = $post['lista'];
+					unset($post['lista']);
+
+					print_r($post);
+
+					$Exercicio->ExeExercicio($lista, $post);
+					if(!$Exercicio->getResult()):
+						//GError($cadastra->getError()[0], $cadastra->getError()[1]);
+					endif;
+				endif;
+
+				$read = new Read;
+				$read -> ExeRead('lista');
+
+				//$possui  = ['n_numeexer' => $cadastraList->getLastId(), 'n_numelist' => $lista];
+
+				if($lista):
+					$create = new Create;
+					//$create->ExeCreate('armazena', $possui);
+				endif;
+
+			?>
+			<h3>Criar Novo Exercicio</h3>
 			<form method="post" accept-charset="utf-8">
-				<p><label for="nome">Digite o novo nome aqui:</label>
-				input<input type="text" name="nome"></p>
-				<input type="submit" name="submitMeusDadosNome">
+				<p><label for="enunciado">Digite o enunciado aqui:</label>
+				<input type="text" name="enunciado"></p>
+				<p><label for="opA">Alternativa A:</label>
+				<input type="text" name="opA"></p>
+				<p><label for="opB">Alternativa B:</label>
+				<input type="text" name="opB"></p>
+				<p><label for="opC">Alternativa C:</label>
+				<input type="text" name="opC"></p>
+				<p><label for="opD">Alternativa D:</label>
+				<input type="text" name="opD"></p>
+				<p><label for="opE">Alternativa E:</label>
+				<input type="text" name="opE"></p>
+				<p><label for="correta">Alternativa Correta:</label>
+				<input type="text" name="correta"></p>
+				<select name="lista" id="ilista">
+					<option value="" selected></option>
+					<?php
+						foreach ($read->getResult() as $value) {
+							echo "<option value=\"{$value['n_numelist']}\">{$value['c_nomelist']}</option>";
+						}
+					?>
+				</select>				
+
+				<input type="submit" name="submitCriaNovoExercicio">
 			</form>
 		</div>
 

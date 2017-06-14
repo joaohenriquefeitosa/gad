@@ -14,7 +14,7 @@
 		$userlogin = $_SESSION['userlogin'];
 	endif;
 
-	if($_SESSION['userlogin']["n_niveuser"] != 3):
+	if($_SESSION['userlogin']["n_niveuser"] != 2):
 		unset($_SESSION['userlogin']);
 		header('Location: index.php?');
 	endif;
@@ -23,10 +23,6 @@
 		unset($_SESSION['userlogin']);
 		header('Location: index.php?');
 	endif;
-
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "</pre>";
 
  ?>
  
@@ -38,6 +34,7 @@
 	<title>Seja Bem Vindo ao Painel de Controle</title>
 	<script type="text/javascript" src="js/menu.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 <section class="interface">
@@ -62,32 +59,36 @@
 	</article>
 	<article id="corpo">
 		<div id="identificacao">
-			<p>Seja bem vindo, Adm. João Henrique.</p>
-			<p><small>Não é você? <a href="#" title="">Clique aqui!</a></small></p>
+			<p>Seja bem vindo, Adm. <?php echo $_SESSION['userlogin']['c_nomeuser'];?></p>
+			<p><small>Não é você? <?php echo "<a href=\"".$_SERVER['REQUEST_URI'].'?exe=logoff">'; ?>Clique aqui!</a></small></p>
 		</div><!-- FIM DIV IDENTIFICAÇÃO-->
+
+		<?php 
+			require_once('modals.php');
+		?>
 
 		<div class="bloco" id="meus_dados">
 			<h3>Meus Dados</h3>
 			<table>
 				<tr class="gray">
 					<th><strong>Nome: </strong></th>
-					<th>João Henrique Feitosa</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_nomeuser'];?></th>
+					<th><a href="#modalMeusDadosNome" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Email: </strong></th>
-					<th>joaohenriquefsf@gmail.com</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_mailuser'];?></th>
+					<th><a href="#modalMeusDadosEmail" title="">Alterar</a></th>
 				</tr>
 				<tr class="gray">
 					<th><strong>Curso: </strong></th>
-					<th>TADS</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_cursuser'];?></th>
+					<th><a href="#modalMeusDadosCurso" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Senha: </strong></th>
 					<th>****</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosSenha" title="">Alterar</a></th>
 				</tr>
 			</table>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -95,89 +96,40 @@
 
 		<div class="bloco gerenciaves" id="assuntos">
 			<h3>Assuntos</h3>
-				<div>
-					<p class="gray">
-						<strong>Conjuntos Numéricos</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Funções do 2ª Grau</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="gray">
-						<strong>Juros Simples e Compostos</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Probabilidades</strong>  
-						<em>Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-				</div>	
-				<br>
-				<div>
-					<p class="gray">
-						<strong>Eletrodinâmica</strong>  
-						<em>Física </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Física Moderna</strong>  
-						<em>Física </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="gray">
-						<strong>Eletromagnetismo</strong>  
-						<em>Física </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Ondas</strong>  
-						<em>Física </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-				</div>	
+			<?php 
+				$readCourse = new read();
+				$readCourse -> FullRead("SELECT COUNT(*) FROM contem");
+				$NumElem = $readCourse -> getResult()[0]["COUNT(*)"];
+				$readCourse -> FullRead("SELECT c_nomedisc, c_nomeassu FROM contem, disciplina, assunto WHERE contem.n_numedisc = disciplina.n_numedisc AND contem.n_numeassu = assunto.n_numeassu order by(c_nomedisc)");
+				$ArrAssunto = $readCourse -> getResult();
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					echo "<p class=\"gray\">";
+					echo      "<strong>{$ArrAssunto[$x]['c_nomedisc']}</strong>
+							  <em>{$ArrAssunto[$x]['c_nomeassu']} </em><a href='#' title=''>Editar</a>
+							<a href='#' title=''>Excluir</a>
+						  </p>";
+				}
+				 ?>
 		</div><!-- FIM ASSUNTOS -->
 
 		<div class="bloco gerenciaves" id="listas">
 		<h3>Listas</h3>
-				<div>
-					<p class="gray">
-						<strong>Listas 01 (12 Exercicios)</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Listas 02 (12 Exercicios)</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="gray">
-						<strong>Listas 03 (12 Exercicios)</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Listas 04 (12 Exercicios)</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<a href="#" title="">Editar</a>
-						<a href="#" title="">Excluir</a>	
-					</p>
-				</div>	
+			<?php 
+				$readList = new read();
+				$readList -> FullRead("SELECT COUNT(*) FROM contem, possui, lista, disciplina, assunto WHERE contem.n_numedisc = disciplina.n_numedisc AND contem.n_numeassu = assunto.n_numeassu AND contem.n_numeassu = possui.n_numeassu AND possui.n_numelist = lista.n_numelist");
+				$NumElem = $readList -> getResult()[0]["COUNT(*)"];
+				$readList -> FullRead("SELECT c_nomelist, c_nomedisc, c_nomeassu FROM contem, possui, lista, disciplina, assunto WHERE contem.n_numedisc = disciplina.n_numedisc AND contem.n_numeassu = assunto.n_numeassu AND contem.n_numeassu = possui.n_numeassu AND possui.n_numelist = lista.n_numelist order by(c_nomedisc)	");
+				$ArrList = $readList -> getResult();
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					echo "<p class=\"gray\">";
+					echo      "<strong>{$ArrList[$x]['c_nomelist']}</strong>
+							  <em>{$ArrList[$x]['c_nomeassu']} - {$ArrList[$x]['c_nomedisc']}</em><a href='#' title=''>Editar</a>
+							<a href='#' title=''>Excluir</a>
+						  </p>";
+				}
+			?>
 		</div><!-- FIM LISTAS -->
 
 		<div class="bloco gerenciaves" id="exercicios">
@@ -294,16 +246,16 @@
 			<li class="option" id="click_meus_dados">Meus Dados</li>
 			<li class="option" id="click_assuntos">Gerenciar Disciplinas
 				<ul>
-					<li id="click_sub_assuntos">Adicionar Novo Assunto</li>
+					<li id="click_sub_assuntos"><a href="#modalAddAssunto" title="">Adicionar Novo Assunto</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_listas">Gerenciar Listas
 				<ul>
-					<li id="click_sub_listas">Criar Nova Lista</li>
+					<li id="click_sub_listas"><a href="#modalAddNovaLista" title="">Criar Nova Lista</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_exercicios">Gerenciar Exercícios<ul>
-					<li  id="click_sub_exercícios">Criar Novo Exercício</li>
+					<li  id="click_sub_exercícios"><a href="#modalCriaNovoExercicio" title="">Criar Novo Exercício</a></li>
 				</ul>
 			</li>
 			<li class="option" id="click_alunos">Gerenciar Alunos</li>

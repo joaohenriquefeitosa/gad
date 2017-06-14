@@ -15,8 +15,8 @@
 	private $Query;
 	private $Error;
 	private $Result; 
+	private $LastID;
 
-	// Nome da tabela no banco de dados;
 	
 	public function ExeCreate($Tabela, array $Data){
 		$this->Tabela = $Tabela;
@@ -24,7 +24,7 @@
 
 		if(in_array('', $this->Data)):
 			$this->Result = false;
-			$this->Error = ['<strong>Erro ao Adicionar: Para adicionar um novo curso, preencha todos os campos</strong>', ALERT];
+			//$this->Error = ['<strong>Erro ao Adicionar: Para adicionar um novo curso, preencha todos os campos</strong>', ALERT];
 		else:
 			$this->setNome();
 			$this->getQuery();
@@ -38,6 +38,10 @@
 
 	public function getError(){
 		return $this->Error;
+	}
+
+	public function getLastId(){
+		return $this->LastID;
 	}
 
 
@@ -57,13 +61,16 @@
 		elseif ($this->Tabela == 'disciplina'):
 			$this->Query = ['c_nomedisc' => $this->CursoNome];
 		elseif ($this->Tabela == 'lista'):
-			$this->Query = ['c_nomelista' => $this->CursoNome];
+			$this->Query = ['c_nomelist' => $this->CursoNome];
+		elseif ($this->Tabela == 'assunto'):
+			$this->Query = ['c_nomeassu' => $this->CursoNome];
 		endif;
 	}
 
 	private function Create(){
 		$Create = new Create;
 		$Create -> ExeCreate($this->Tabela, $this->Query);
+		$this->LastID = $Create->getLastId();
 		if($Create->getResult()):
 			$this->Result = $Create->getResult();
 			//$this->Error = ["<strong>Sucesso:</strong> O Curso {$this->CursoNome} foi cadastrada no sistema.", ALERT];
