@@ -29,7 +29,8 @@ class Cadastro{
 		$this->Curso = !empty($UserData['curso']) ? $UserData['curso'] : null;
 		$this->Senha = (string) $UserData['pass'];
 
-		$this->Cadastrar();
+		$this->Execute();
+		
 
 	}
 
@@ -66,7 +67,6 @@ class Cadastro{
 		$query= ['c_nomeuser' => $this->Nome,
 				 'c_mailuser' => $this->Email,
 				 'n_niveuser' => $this->Nivel, 
-				 'c_cursuser' => $this->Curso,
 				 'c_passuser' => $this->Senha];
 
 		$create -> ExeCreate(TABELA, $query);
@@ -80,6 +80,15 @@ class Cadastro{
 			return false;
 		endif;
 
+	}
+
+	private function Matricular(){
+		$query = ['n_numeuser' => $this->LastID,
+				  'n_numecurs' => $this->Curso];
+
+
+		$create = new Create();
+		$create -> ExeCreate('matriculado', $query);
 	}
 	/*
 	private function getUser(){
@@ -102,6 +111,7 @@ class Cadastro{
 		endif;
 
 		$this->Cadastrar();
+		$this->Matricular();
 
 		$_SESSION['userCadastro'] = $this->Result;
 		$this->Error = ["Olá {$this->Result['c_nomeuser']}, seja bem vindo(a)."];

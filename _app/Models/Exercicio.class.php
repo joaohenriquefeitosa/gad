@@ -24,10 +24,14 @@ class Exercicio{
 	private $ListaContainer;
 	private $LastID;
 	private $Query;
+	private $AuthorID;
 
 
-	public function ExeExercicio($ListaContainer, array $Dados){
-		$this->ListaContainer = $ListaContainer;
+	public function ExeExercicio($AuthorID, $ListaContainer, array $Dados){
+		$this->AuthorID = (int) $AuthorID;
+		echo 
+
+		$this->ListaContainer = (int) $ListaContainer;
 
 		$this->Data = $Dados;
 
@@ -39,7 +43,7 @@ class Exercicio{
 			
 			$this->Execute();
 
-			$this->setArmazenamento();
+			$this->setAuthor();
 		endif;
 
 	}
@@ -83,6 +87,12 @@ class Exercicio{
 
 	}
 
+	private function setAuthor(){
+		$author = ['n_numeuser' => $this->AuthorID, 'n_numeexer' => $this->LastID];
+		$Create = new Create;
+		$Create -> ExeCreate('author', $author);
+	}
+
 	private function Execute(){
 		$Create = new Create;
 		$Create -> ExeCreate('exercicio', $this->Query);
@@ -90,6 +100,7 @@ class Exercicio{
 		if($Create->getResult()):
 			$this->Result = $Create->getResult();
 			$this->setArmazenamento();
+			$this->setAuthor();			
 			//$this->Error = ["<strong>Sucesso:</strong> O Curso {$this->CursoNome} foi cadastrada no sistema.", ALERT];
 		else:
 			echo "ERRO.";

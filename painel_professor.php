@@ -133,103 +133,74 @@
 		</div><!-- FIM LISTAS -->
 
 		<div class="bloco gerenciaves" id="exercicios">
-			<h3>Meus Exercícios</h3>
 			<div id="meus_exercicios">
-			<div class="gray quest left">
-				<h4>Exercicios 01 - Lista 03</h4>
-				<small>Conjuntos Numéricos - Matemática </small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<p>a) 22</p>
-				<p>b) 22</p>
-				<p>c) 22</p>
-				<p>d) 22</p>
-				<p>e) 22</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Incluir</a>
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
-			<div class="ngray quest right">
-				<h4>Exercicios 01 - Lista 03</h4>
-				<small>Conjuntos Numéricos - Matemática </small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<p>a) 22</p>
-				<p>b) 22</p>
-				<p>c) 22</p>
-				<p>d) 22</p>
-				<p>e) 22</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Incluir</a>
-				   <a href="#" title="">Excluir</a>
-				</p>		
-			</div>
-			<div id="clear"></div>
-			<div class="ngray quest left">
-				<h4>Exercicios 01 - Lista 03</h4>
-				<small>Conjuntos Numéricos - Matemática </small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<p>a) 22</p>
-				<p>b) 22</p>
-				<p>c) 22</p>
-				<p>d) 22</p>
-				<p>e) 22</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Incluir</a>
-				   <a href="#" title="">Excluir</a>
-				</p>			
-			</div>
-			<div class="gray quest right">
-				<h4>Exercicios 01 - Lista 03</h4>
-				<small>Conjuntos Numéricos - Matemática </small>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut condimentum ligula. Nulla ac elementum lorem, quis iaculis massa. Aenean sit amet sapien ac lectus scelerisque aliquet malesuada a neque.</p>
-				<p>a) 22</p>
-				<p>b) 22</p>
-				<p>c) 22</p>
-				<p>d) 22</p>
-				<p>e) 22</p>
-				<p>
-				   <a href="#" title="">Editar</a>
-				   <a href="#" title="">Incluir</a>
-				   <a href="#" title="">Excluir</a>
-				</p>		
-			</div>
+			<h3>Meus Exercícios</h3>
+
+			<?php 
+				$idaut = $_SESSION['userlogin']['n_numeuser'];
+				$readExer = new Read;
+				$readExer -> FullRead("SELECT c_enumexer, c_altaexer, c_altbexer, c_altcexer, c_altdexer, c_alteexer, c_nomelist, c_nomedisc, c_nomeassu FROM exercicio, armazena, lista, disciplina, assunto, contem, possui,author WHERE exercicio.n_numeexer = armazena.n_numeexer AND armazena.n_numelist = lista.n_numelist AND possui.n_numelist = lista.n_numelist AND possui.n_numeassu = assunto.n_numeassu AND contem.n_numeassu = assunto.n_numeassu AND contem.n_numedisc = disciplina.n_numedisc AND author.n_numeexer = exercicio.n_numeexer AND :id = author.n_numeuser ORDER BY(c_nomelist)", "id=".$idaut);
+
+
+				$ArrExer = $readExer -> getResult();
+
+				$NumElem = count($ArrExer);
+
+				$counter = 0;
+				for($x = 0; $x < $NumElem; $x ++) {
+					
+					if($counter%2 == 0) echo "<div class='gray quest left'>";
+					else echo "<div class='gray quest right'>";
+					
+					echo "<h4>{$ArrExer[$x]['c_nomelist']}</h4>
+						  <small>{$ArrExer[$x]['c_nomeassu']} - {$ArrExer[$x]['c_nomedisc']} </small>
+						  <p>{$ArrExer[$x]['c_enumexer']}.</p>
+						  <p>a) {$ArrExer[$x]['c_altaexer']}</p>
+						  <p>b) {$ArrExer[$x]['c_altbexer']}</p>
+						  <p>c) {$ArrExer[$x]['c_altcexer']}</p>
+						  <p>d) {$ArrExer[$x]['c_altdexer']}</p>
+						  <p>e) {$ArrExer[$x]['c_alteexer']}</p>
+						  <p>
+							   <a href='#' title=''>Editar</a>
+							   <a href='#' title=''>Incluir</a>
+							   <a href='#' title=''>Excluir</a>
+						  </p>			
+					</div>";
+					$counter += 1;
+				}
+
+
+			 ?>
 			<div id="clear"></div>
 			</div>
 			<h3>Exercícios Existentes</h3>
-				<div>
-					<p class="gray">
-						<strong>Exercicio 01 - Desenhe um ...</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<small>Prof. John J Rambo</small>
-						<a href="#" title="">Ver</a>
-						<a href="#" title="">Incluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Exercicio 02 - Desenhe um ...</strong>   
-						<em>Conjuntos Numéricos - Matemática </em>
-						<small>Prof. John J Rambo</small>
-						<a href="#" title="">Ver</a>
-						<a href="#" title="">Incluir</a>
-					</p>
-					<p class="gray">
-						<strong>Exercicio 03 - Desenhe um ...</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<small>Prof. John J Rambo</small>
-						<a href="#" title="">Ver</a>
-						<a href="#" title="">Incluir</a>
-					</p>
-					<p class="ngray">
-						<strong>Exercicio 04 - Desenhe um ...</strong>  
-						<em>Conjuntos Numéricos - Matemática </em>
-						<small>Prof. John J Rambo</small>
-						<a href="#" title="">Ver</a>
-						<a href="#" title="">Incluir</a>	
-					</p>
-				</div>	
-		</div><!-- FIM EXERCICIOS -->
+			<div>
+
+				<?php 
+				//AND author.n_numeexer = exercicio.n_numeexer AND 58 <> author.n_numeuser
+				$readExer -> FullRead("SELECT c_enumexer, c_altaexer, c_altbexer, c_altcexer, c_altdexer, c_alteexer, c_nomedisc, c_nomeassu, c_nomeuser, c_correxer FROM exercicio, armazena, lista, disciplina, assunto, contem, possui, author, user WHERE exercicio.n_numeexer = armazena.n_numeexer AND armazena.n_numelist = lista.n_numelist AND possui.n_numelist = lista.n_numelist AND possui.n_numeassu = assunto.n_numeassu AND contem.n_numeassu = assunto.n_numeassu AND contem.n_numedisc = disciplina.n_numedisc AND author.n_numeexer = exercicio.n_numeexer AND author.n_numeuser = user.n_numeuser ORDER BY(c_nomelist)");
+
+				$ArrExer = $readExer -> getResult();
+
+				echo "<pre>";
+				print_r($ArrExer);
+				echo "</pre>";
+
+				$NumElem = count($ArrExer);
+
+				for($x = 0; $x < $NumElem; $x ++) {
+					echo "<p class='gray'>
+						  <strong>Exercicio ".($x+1)." - ".substr($ArrExer[$x]['c_enumexer'], 0, 16)."</strong>  
+						  <em>{$ArrExer[$x]['c_nomedisc']} - {$ArrExer[$x]['c_nomeassu']} </em>
+						  <small>Prof. {$ArrExer[$x]['c_nomeuser']}</small>
+						  <a href='#' title=''>Ver</a>
+						  <a href='#' title=''>Incluir</a>
+					    </p>";
+					}
+
+				 ?>
+
+	</div><!-- FIM EXERCICIOS -->
 
 		<div class="bloco gerenciaves" id="alunos">
 			<p>a desenvolver...</p>

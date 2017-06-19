@@ -14,19 +14,15 @@
 		$userlogin = $_SESSION['userlogin'];
 	endif;
 
-	if($_SESSION['userlogin']["n_niveuser"] != 3):
+	if($_SESSION['userlogin']["n_niveuser"] != 1):
 		unset($_SESSION['userlogin']);
-		header('Location: index.php?');
+		header('Location: index.php?exe=restrito');
 	endif;
 
 	if($exe == 'logoff'):
 		unset($_SESSION['userlogin']);
-		header('Location: index.php?');
+		header('Location: index.php?exe=logoff');
 	endif;
-
-	echo "<pre>";
-	print_r($_SESSION);
-	echo "</pre>";
 
  ?>
  
@@ -38,6 +34,7 @@
 	<title>Seja Bem Vindo ao Painel de Controle</title>
 	<script type="text/javascript" src="js/menu.js"></script>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
 <section class="interface">
@@ -62,43 +59,108 @@
 	</article>
 	<article id="corpo">
 		<div id="identificacao">
-			<p>Seja bem vindo, Adm. João Henrique.</p>
-			<p><small>Não é você? <a href="#" title="">Clique aqui!</a></small></p>
+			<p>Seja bem vindo, Aluno <?php echo $_SESSION['userlogin']['c_nomeuser'];?></p>
+			<p><small>Não é você? <?php echo "<a href=\"".$_SERVER['REQUEST_URI'].'?exe=logoff">'; ?>Clique aqui!</a></small></p>
 		</div><!-- FIM DIV IDENTIFICAÇÃO-->
+
+		<?php 
+			require_once('modals.php');
+		 ?>
 
 		<div class="bloco gerenciaves" id="meus_dados">
 			<h3>Meus Dados</h3>
 			<table>
 				<tr class="gray">
 					<th><strong>Nome: </strong></th>
-					<th>João Henrique Feitosa</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_nomeuser'];?></th>
+					<th><a href="#modalMeusDadosNome" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Email: </strong></th>
-					<th>joaohenriquefsf@gmail.com</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_mailuser'];?></th>
+					<th><a href="#modalMeusDadosEmail" title="">Alterar</a></th>
 				</tr>
 				<tr class="gray">
 					<th><strong>Curso: </strong></th>
-					<th>TADS</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><?php echo $_SESSION['userlogin']['c_cursuser'];?></th>
+					<th><a href="#modalMeusDadosCurso" title="">Alterar</a></th>
 				</tr>
 				<tr>
 					<th><strong>Senha: </strong></th>
 					<th>****</th>
-					<th><a href="#" title="">Alterar</a></th>
+					<th><a href="#modalMeusDadosSenha" title="">Alterar</a></th>
 				</tr>
 			</table>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div><!-- FIM DIV MEUS_DADOS-->
 
 		<div class="bloco gerenciaves" id="minhas_disciplinas">
-			<p>MINHAS DISCIPLINAS</p>
+
+			<h3>Disciplinas</h3>
+				<?php 
+				$idal = $_SESSION['userlogin']['n_numeuser'];
+				//leciona.n_numeuser = user.n_numeuser AND leciona.n_numedisc = disciplina.n_numedisc AND disciplina.n_numedisc = 
+				$readDisc = new read();
+				$readDisc -> FullRead("SELECT * FROM disciplina, matriculado, disponibiliza WHERE  disciplina.n_numedisc = disponibiliza.n_numedisc AND disponibiliza.n_numecurs = matriculado.n_numecurs AND matriculado.n_numeuser = :id", "id=".$idal);
+
+				echo $idal;
+
+
+				
+				$ArrDisc = $readDisc -> getResult();
+				$NumElem = count($ArrDisc);
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					echo "<div class=\"gray\">";
+					echo   "<h4>{$ArrDisc[$x]['c_nomedisc']}</h4>";
+					echo   "<p>Professor: Fulano</p>
+							<p>Listas: 66</p>
+							<p>
+							   <a href='#' title=''>Editar</a>
+							   <a href='#' title=''>Excluir</a>
+							</p>		
+						  </div>";	}?>
+
 		</div><!-- FIM DIV MINHAS DISCIPLINAS-->
 		
 		<div class="bloco gerenciaves" id="minhas_listas">
-			<p>MINHAS LISTAS</p>
+			<h3>Listas</h3>
+			<?php 
+				$idal = $_SESSION['userlogin']['n_numeuser'];
+				//leciona.n_numeuser = user.n_numeuser AND leciona.n_numedisc = disciplina.n_numedisc AND disciplina.n_numedisc = 
+				$readDisc = new read();
+				$readDisc -> FullRead("SELECT * FROM 
+										disciplina, matriculado, disponibiliza, contem, assunto, possui, lista
+										WHERE lista.n_numelist = possui.n_numelist
+										AND possui.n_numeassu = assunto.n_numeassu
+										AND contem.n_numeassu = assunto.n_numeassu
+										AND disciplina.n_numedisc = contem.n_numedisc
+										AND disciplina.n_numedisc = disponibiliza.n_numedisc 
+										AND disponibiliza.n_numecurs = matriculado.n_numecurs 
+										AND matriculado.n_numeuser = :id;", "id=".$idal);
+
+				echo $idal;
+
+
+
+				
+				$ArrDisc = $readDisc -> getResult();
+				$NumElem = count($ArrDisc);
+
+
+				
+				
+				for($x = 0; $x < $NumElem; $x ++){
+					echo "<div class=\"gray\">";
+					echo   "<h4><a href='exercicio.php?numlist=".$ArrDisc[$x]['n_numelist']."'title=''>{$ArrDisc[$x]['c_nomelist']}</a></h4>";
+					echo   "<p>Algoritmos - Introdução às Variáveis</p>
+							<p>Exercicios: 12</p>
+							<p>
+							   <a href='#' title=''>Editar</a>
+							   <a href='#' title=''>Excluir</a>
+							</p>		
+						  </div>";	}?>
 		</div><!-- FIM DIV MINHAS LISTAS-->
 
 	</article><!-- FIM ARTICLE CORPO-->

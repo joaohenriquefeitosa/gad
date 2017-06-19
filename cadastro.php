@@ -68,13 +68,18 @@
 
 			<div id="curso">
 			<label for="icurso"><span><img src="img/course.png" alt=""></span></label>
-			<select name="curso" id="icurso">
-				<option value="" selected>SEU CURSO</option>
-				<option value="primeiro_tads">TADS</option>
-				<option value="segundo_tads">TADS</option>
-			</select>
-			</div>
 
+			<select name="curso" id="icurso">
+				<option value="" selected></option>
+				<?php
+					$readCurs = new Read;
+					$readCurs -> ExeRead('curso');
+					
+					foreach ($readCurs->getResult() as $value) {
+						echo "<option value=\"{$value['n_numecurs']}\">{$value['c_nomecurs']}</option>";
+					}
+				?>
+			</select>
 
 			<div id="pass">
 			<label for="ipass"><span><img src="img/padlock.png" alt="" width="20px" height="20px"></span></label>

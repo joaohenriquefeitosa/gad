@@ -104,6 +104,7 @@
 			<a href="#fechar" title="Fechar" class="fechar">X</a>
 			<?php 
 				$post = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+				
 				if(!empty($post['submitAddDisciplina'])):
 					unset($post['submitAddDisciplina']);
 
@@ -111,15 +112,38 @@
 					$cadastra = new Labels;
 					$cadastra -> ExeCreate('disciplina', $post);
 
+					$curso = $post['curso'];
+					unset($post['curso']);
+
 					if(!$cadastra->getResult()):
 						//GError($cadastra->getError()[0], $cadastra->getError()[1]);
 					endif;
+
+					
+
+					$disponibiliza  = ['n_numedisc' => $cadastra->getLastId(), 'n_numecurs' => $curso];
+
+					if($disponibiliza):
+						$create = new Create;
+						$create->ExeCreate('disponibiliza', $disponibiliza);
+					endif;
+
 				endif;
+				$readCurs = new Read;
+				$readCurs -> ExeRead('curso');
 			 ?>		
 			<form method="post" accept-charset="utf-8">
 				<h3>ADICIONAR DISCIPLINA</h3>
 				<p><label for="nome">Digite a nova disciplina aqui:</label>
 					<input type="text" name="label"></p>
+					<select name="curso" id="icurso">
+					<option value="" selected></option>
+					<?php
+						foreach ($readCurs->getResult() as $value) {
+							echo "<option value=\"{$value['n_numecurs']}\">{$value['c_nomecurs']}</option>";
+						}
+					?>
+				</select>
 				<input type="submit" name="submitAddDisciplina">
 			</form>
 		</div>
@@ -262,15 +286,17 @@
 				
 				$Exercicio = new Exercicio;
 
+
 				if(!empty($post['submitCriaNovoExercicio'])):
 					unset($post['submitCriaNovoExercicio']);
 
 					$lista = $post['lista'];
 					unset($post['lista']);
 
-					print_r($post);
 
-					$Exercicio->ExeExercicio($lista, $post);
+					$authorID = $_SESSION['userlogin']['n_numeuser'];
+
+					$Exercicio->ExeExercicio(58, $lista, $post);
 					if(!$Exercicio->getResult()):
 						//GError($cadastra->getError()[0], $cadastra->getError()[1]);
 					endif;

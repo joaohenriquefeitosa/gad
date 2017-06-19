@@ -42,7 +42,7 @@ div#clear{clear: both;}
 /*==========================================================================================*/
 /*=====================SECTION==============================================================*/
 /*==========================================================================================*/
-.gray{background-color:#eee; width: 90%; margin: 8px auto; padding: 5px 0;}
+.gray{background-color:#eee; width: 90%; margin: 8px auto; padding: 5px 10px;}
 .ngray{background-color:#fff; width: 90%; margin: 8px auto;}
 
 section.interface{width: 80%; float: right; background: #fff;}
@@ -105,6 +105,17 @@ section.interface article#corpo div#assuntos {display: none;}
 section.interface article#corpo div#minhas_disciplinas {display: none;}
 
 section.interface article#corpo div#minhas_listas {display: none;}
+
+
+div#exercicio h1 {text-align: center; padding-bottom: 20px;}
+div#exercicio div h3 {color: red; text-align: center; padding-bottom: 15px;}
+div#exercicio div p {padding: 3px 0;}
+.result {width: 35%; text-align: center;}
+div#exercicio p {padding: 20px;}
+div#exercicio p.enumciado{color: #000; padding-bottom: 10px;}
+div#exercicio form {padding-bottom: 20px;}
+div#exercicio form input[type=submit] {border: 2px solid #373e4a; color: #; margin: 0px auto 15px auto; padding: 0 5px; background-color:#eee; border: none; height: 35px; width: 80%; color: #9b9d9e; font-size: 1em; box-shadow: 1px 1px rgba(0,0,0,0;5);}
+
 /*==========================================================================================*/
 /*=====================ASIDE================================================================*/
 /*==========================================================================================*/
