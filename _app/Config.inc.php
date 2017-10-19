@@ -1,10 +1,10 @@
 <?php 
 
 	// CONFIGURAÇÕES DO SITE #####################################
-	define('HOST','localhost');
-	define('USER','john');
+	define('HOST','');
+	define('USER','');
 	define('PASS','');
-	define('DBSA','gad');
+	define('DBSA','');
 
 	// CONFIGURAÇÕES DO SITE #####################################
 	function __autoload($Class){
